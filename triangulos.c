@@ -15,6 +15,8 @@ void output(struct Peca* p, int size) {
 	}
 }
 
+
+
 int main(void) {
 	struct Peca* pecas = (struct Peca*) malloc(sizeof(struct Peca));
 	int v1, v2, v3;
@@ -24,7 +26,10 @@ int main(void) {
 	while(scanf("%d %d %d", &v1, &v2, &v3) == 3) {
 		if(i == 19) {
 			return 1;
+		} if (v1 > v2 || v1 > v3 || v2 > v3) {
+			return 1;
 		}
+
 		printf("%d %d %d\n", v1, v2, v3);
 		pecas[i].arestas[0][0] = v1;
 		pecas[i].arestas[0][1] = v2;
