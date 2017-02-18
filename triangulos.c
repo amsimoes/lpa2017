@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+int maxscore = 0;
+
 
 typedef struct Peca {
 	int arestas[3][2];
@@ -49,7 +51,7 @@ int input(peca* pecas) {
 
 /* PAR -> Em cima | IMPAR -> Em baixo */
 peca *connected(int *coords, int orientacao, peca **tabuleiro) {
-	peca vizinhas[3];	/* Esquerda | Direita | Cima ou Baixo */ 
+	peca vizinhas[3];	/* Esquerda | Direita | Cima ou Baixo */
 	if (orientacao % 2 == 0) {
 		if (tabuleiro[coords[0]-1][coords[1]].used != 0) {	/* Peça em cima */
 			vizinhas[2] = tabuleiro[coords[0]-1][coords[1]];
@@ -99,4 +101,257 @@ int main(void) {
 	}*/
 
 	return 0;
+}
+
+int* reverse_aresta(int aresta[]){
+	int reversed[2];
+	reversed[0] = aresta[1];
+	reversed[1] = aresta[0];
+	return reversed;
+}
+/*
+void flipa_arestas(peca peca, int num_rotatos){
+	/*arestasm devem ser esquerda[0], direita[1], cima/baixo[2]
+	for (int i = 0; i<num_rotatos; i++){
+		peca.arestas[0][0] = peca.arestas[0]
+	}
+}  */
+
+
+
+int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[]){
+	/*comparar score com max score no fim e se for maior atualizar valor |||||||||| quando atualizar valor de score?*/
+	if (atual.orientacao == 0){
+		/*procurar candidatos nas posicoes adequadas. Procurar esquerda, direita, cima*/
+		for(int i = 0; i< sizeof(pecas)/ sizeof(peca); i++){
+			for (int k= 0; k<3; k++){
+				/*se encontrarmos o par contrario da aresta numa posicao 0, como os triangulos estao na posicao 0 originalmente, é a aresta da esquerda
+				para ligar a uma cena numa posicao par, se for igual à cena da esquerda, vai ter de rodar até à posicao 5*/
+				if (pecas[i].arestas[k] == reverse_aresta(atual.arestas[0]) && pecas[i].used != 1){
+					/*encontrou igual à esquerda da peça atual*/
+					int x = atual.coords[0];
+					int y = atual.coords[1];
+					peca nova = pecas[i];
+					/*verificar a cena dos buracos em funcao da orientacao da peca atual, se é em cima ou em baixo. Posicoes das outras pecas sao sempre as mms*/
+					if (k==0 && tabuleiro[x][y-1].used == 0){
+						/*aresta do lado esquerdo*/
+						nova.coords[0] = x;
+                        nova.coords[1] = y-1;
+						nova.orientacao = 5;
+						nova.used = 1;
+						tabuleiro[x][y-1] = nova;
+						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+					}
+					if (k == 1 && tabuleiro[x][y-1].used == 0){
+						/*aresta do lado direito*/
+						nova.coords[0] = x;
+                        nova.coords[1] = y-1;
+						nova.orientacao = 1;
+						nova.used = 1;
+						tabuleiro[x][y+1] = nova;
+						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+					}
+					else if(tabuleiro[x-1][y].used == 0){
+						/*aresta de cima*/
+						nova.coords[0] = x;
+                        nova.coords[1] = y-1;
+						nova.orientacao = 3;
+						nova.used = 1;
+						tabuleiro[x+1][y] = nova;
+
+						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas);
+					}
+				}
+				/*se encontrarmos o par contrario da aresta numa posicao 1, como os triangulos estao na posicao 0 originalmente, é a aresta da direita
+				para ligar a uma cena numa posicao par, se for igual à cena da direita, vai ter de todar até à posicao 5*/
+				else if (pecas[i].arestas[k] == reverse_aresta(atual.arestas[1]) && pecas[i].used != 1){
+					/*encontrou igual à direita da peça atual*/
+					int x = atual.coords[0];
+					int y = atual.coords[1];
+					peca nova = pecas[i];
+					/*verificar a cena dos buracos em funcao da orientacao da peca atual, se é em cima ou em baixo. Posicoes das outras pecas sao sempre as mms*/
+					if (k==0 && tabuleiro[x][y+1].used == 0){
+						/*aresta do lado esquerdo*/
+						nova.coords[0] = x;
+                        nova.coords[1] = y+1;
+ 						nova.orientacao = 1;
+						nova.used = 1;
+						tabuleiro[x][y+1] = nova;
+						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+					}
+					if (k == 1 && tabuleiro[x][y+1].used == 0){
+						/*aresta do lado direito */
+                        nova.coords[0] = x;
+                        nova.coords[1] = y+1;
+						nova.orientacao = 3;
+						nova.used = 1;
+						tabuleiro[x][y+1] = nova;
+						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+					}
+					else if(tabuleiro[x][y+1].used ==0){
+						/*aresta de cima*/
+						nova.coords[0] = x;
+                        nova.coords[1] = y+1;
+						nova.orientacao = 5;
+						nova.used = 1;
+						tabuleiro[x][y+1] = nova;
+						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0],pecas);
+					}
+				}
+				/*se encontrarmos o par contrario da aresta numa posicao 2, como os triangulos estao na posicao 0 originalmente, é a aresta de cima
+				para ligar a uma cena numa posicao par*/
+				else if (pecas[i].arestas[k] == reverse_aresta(atual.arestas[2]) && pecas[i].used != 1){
+					/*encontrou igual à direita da peça atual*/
+					int x = atual.coords[0];
+					int y = atual.coords[1];
+					peca nova = pecas[i];
+					/*verificar a cena dos buracos em funcao da orientacao da peca atual, se é em cima ou em baixo. Posicoes das outras pecas sao sempre as mms*/
+					if (k==0 && tabuleiro[x+1][y].used == 0){
+						/*aresta do lado esquerdo*/
+                        nova.coords[0] = x+1;
+                        nova.coords[1] = y;
+						nova.orientacao = 5;
+						nova.used = 1;
+						tabuleiro[x+1][y] = nova;
+						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+					}
+					if (k == 1 && tabuleiro[x+1][y].used == 0){
+						/*aresta do lado direito FEITA*/
+                        nova.coords[0] = x+1;
+                        nova.coords[1] = y;
+						nova.orientacao = 1;
+						nova.used = 1;
+						tabuleiro[x+1][y] = nova;
+						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+					}
+					else {
+						/*aresta de cima*/
+						nova.coords[0] = x+1;
+                        nova.coords[1] = y;
+						nova.orientacao = 3;
+						nova.used = 1;
+						tabuleiro[x][y+1] = nova;
+						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas);
+					}
+				}
+			}
+		}
+	}
+	else if (atual.orientacao == 1){
+		/*procurar candidatos nas posicoes adequadas. Procurar esquerda, direita, baixo*/
+        for(int i = 0; i< sizeof(pecas)/ sizeof(peca); i++){
+            for (int k= 0; k<3; k++){
+                /*se encontrarmos o par contrario da aresta numa posicao 0, como os triangulos estao na posicao 0 originalmente, é a aresta da esquerda
+                para ligar a uma cena numa posicao par, se for igual à cena da esquerda, vai ter de rodar até à posicao 5*/
+                if (pecas[i].arestas[k] == reverse_aresta(atual.arestas[0]) && pecas[i].used != 1){
+                    /*encontrou igual à esquerda da peça atual*/
+                    int x = atual.coords[0];
+                    int y = atual.coords[1];
+                    peca nova = pecas[i];
+                    /*verificar a cena dos buracos em funcao da orientacao da peca atual, se é em cima ou em baixo. Posicoes das outras pecas sao sempre as mms*/
+                    if (k==0 && tabuleiro[x][y-1].used == 0){
+                        /*aresta do lado esquerdo*/
+                        nova.coords[0] = x;
+                        nova.coords[1] = y-1;
+                        nova.orientacao = 4;
+                        nova.used = 1;
+                        tabuleiro[x][y-1] = nova;
+                        return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+                    }
+                    if (k == 1 && tabuleiro[x][y-1].used == 0){
+                        /*aresta do lado direito*/
+                        nova.coords[0] = x;
+                        nova.coords[1] = y-1;
+                        nova.orientacao = 0;
+                        nova.used = 1;
+                        tabuleiro[x][y-1] = nova;
+                        return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+                    }
+                    else if(tabuleiro[x][y-1].used == 0){
+                        /*aresta de cima*/
+                        nova.coords[0] = x;
+                        nova.coords[1] = y-1;
+                        nova.orientacao = 2;
+                        nova.used = 1;
+                        tabuleiro[x][y-1] = nova;
+
+                        return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas);
+                    }
+                }
+                    /*se encontrarmos o par contrario da aresta numa posicao 1, como os triangulos estao na posicao 0 originalmente, é a aresta da direita
+                    para ligar a uma cena numa posicao par, se for igual à cena da direita, vai ter de todar até à posicao 5*/
+                else if (pecas[i].arestas[k] == reverse_aresta(atual.arestas[1]) && pecas[i].used != 1){
+                    /*encontrou igual à direita da peça atual*/
+                    int x = atual.coords[0];
+                    int y = atual.coords[1];
+                    peca nova = pecas[i];
+                    /*verificar a cena dos buracos em funcao da orientacao da peca atual, se é em cima ou em baixo. Posicoes das outras pecas sao sempre as mms*/
+                    if (k==0 && tabuleiro[x][y+1].used == 0){
+                        /*aresta do lado esquerdo*/
+                        nova.coords[0] = x;
+                        nova.coords[1] = y+1;
+                        nova.orientacao = 0;
+                        nova.used = 1;
+                        tabuleiro[x][y+1] = nova;
+                        return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+                    }
+                    if (k == 1 && tabuleiro[x][y+1].used == 0){
+                        /*aresta do lado direito */
+                        nova.coords[0] = x;
+                        nova.coords[1] = y+1;
+                        nova.orientacao = 2;
+                        nova.used = 1;
+                        tabuleiro[x][y+1] = nova;
+                        return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+                    }
+                    else if(tabuleiro[x][y+1].used ==0){
+                        /*aresta de cima*/
+                        nova.coords[0] = x;
+                        nova.coords[1] = y+1;
+                        nova.orientacao = 4;
+                        nova.used = 1;
+                        tabuleiro[x][y+1] = nova;
+                        return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0],pecas);
+                    }
+                }
+                    /*se encontrarmos o par contrario da aresta numa posicao 2, como os triangulos estao na posicao 0 originalmente, é a aresta de baixo
+                    para ligar a uma cena numa posicao par*/
+                else if (pecas[i].arestas[k] == reverse_aresta(atual.arestas[2]) && pecas[i].used != 1){
+                    /*encontrou igual à direita da peça atual*/
+                    int x = atual.coords[0];
+                    int y = atual.coords[1];
+                    peca nova = pecas[i];
+                    /*verificar a cena dos buracos em funcao da orientacao da peca atual, se é em cima ou em baixo. Posicoes das outras pecas sao sempre as mms*/
+                    if (k==0 && tabuleiro[x-1][y].used == 0){
+                        /*aresta do lado esquerdo*/
+                        nova.coords[0] = x-1;
+                        nova.coords[1] = y;
+                        nova.orientacao = 2;
+                        nova.used = 1;
+                        tabuleiro[x+1][y] = nova;
+                        return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+                    }
+                    if (k == 1 && tabuleiro[x-1][y].used == 0){
+                        /*aresta do lado direito*/
+                        nova.coords[0] = x-1;
+                        nova.coords[1] = y;
+                        nova.orientacao = 4;
+                        nova.used = 1;
+                        tabuleiro[x+1][y] = nova;
+                        return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+                    }
+                    else if(tabuleiro[x-1][y].used == 0){
+                        /*aresta de cima*/
+                        nova.coords[0] = x-1;
+                        nova.coords[1] = y;
+                        nova.orientacao = 0;
+                        nova.used = 1;
+                        tabuleiro[x][y+1] = nova;
+                        return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas);
+                    }
+                }
+            }
+        }
+
+	}
 }
