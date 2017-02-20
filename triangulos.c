@@ -36,7 +36,7 @@ int main(void) {
 	/* print_board(tabuleiro, size); */
 
 	int score = 0;
-	score = search_connection(pecas[0], tabuleiro, score, pecas, size);
+	score = search_connection(pecas[0], tabuleiro, maxscore, pecas, size);
 	printf("%d\n", score);
 
 	return 0;
@@ -83,8 +83,9 @@ int input(peca* pecas) {
 void print_board(peca** tabuleiro, int size) {
 	int i, j;
 	for(i=0;i<2*size;i++) {
+		printf(" ");
 		for(j=0;j<2*size;j++) {
-			printf("%d ", tabuleiro[i][j].used);
+			printf("(%d %d %d) ", tabuleiro[i][j].arestas[0][0], tabuleiro[i][j].arestas[1][0], tabuleiro[i][j].arestas[2][0]);
 		}
 		printf("\n");
 	}
@@ -128,7 +129,7 @@ void flipa_arestas(peca peca, int num_rotatos){
 
 int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int size){
 	/*comparar score com max score no fim e se for maior atualizar valor |||||||||| quando atualizar valor de score?*/
-	if (atual.orientacao == 0){
+	if (atual.orientacao == 0) {
 		/*procurar candidatos nas posicoes adequadas. Procurar esquerda, direita, cima*/
 		for(int i = 0; i<size; i++){
 			for (int k= 0; k<3; k++){
