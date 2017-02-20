@@ -109,6 +109,7 @@ int* reverse_aresta(int aresta[]){
 	reversed[1] = aresta[0];
 	return reversed;
 }
+
 /*
 void flipa_arestas(peca peca, int num_rotatos){
 	/*arestasm devem ser esquerda[0], direita[1], cima/baixo[2]
@@ -117,13 +118,11 @@ void flipa_arestas(peca peca, int num_rotatos){
 	}
 }  */
 
-
-
-int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[]){
+int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int size){
 	/*comparar score com max score no fim e se for maior atualizar valor |||||||||| quando atualizar valor de score?*/
 	if (atual.orientacao == 0){
 		/*procurar candidatos nas posicoes adequadas. Procurar esquerda, direita, cima*/
-		for(int i = 0; i< sizeof(pecas)/ sizeof(peca); i++){
+		for(int i = 0; i<size; i++){
 			for (int k= 0; k<3; k++){
 				/*se encontrarmos o par contrario da aresta numa posicao 0, como os triangulos estao na posicao 0 originalmente, é a aresta da esquerda
 				para ligar a uma cena numa posicao par, se for igual à cena da esquerda, vai ter de rodar até à posicao 5*/
@@ -239,7 +238,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[]){
 	}
 	else if (atual.orientacao == 1){
 		/*procurar candidatos nas posicoes adequadas. Procurar esquerda, direita, baixo*/
-        for(int i = 0; i< sizeof(pecas)/ sizeof(peca); i++){
+        for(int i = 0; i< size; i++){
             for (int k= 0; k<3; k++){
                 /*se encontrarmos o par contrario da aresta numa posicao 0, como os triangulos estao na posicao 0 originalmente, é a aresta da esquerda
                 para ligar a uma cena numa posicao par, se for igual à cena da esquerda, vai ter de rodar até à posicao 5*/
@@ -355,7 +354,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[]){
 	}
 	else if (atual.orientacao == 2){
 		/*procurar candidatos nas posicoes adequadas. Procurar esquerda, direita, baixo*/
-		for(int i = 0; i< sizeof(pecas)/ sizeof(peca); i++){
+		for(int i = 0; i< size; i++){
 			for (int k= 0; k<3; k++){
 				/*se encontrar o contrario da posicao 0 vai ter de ligar em cima porque esta peça está rodada 1 vez para a direita
 				 * comparando com a cena original*/
@@ -469,7 +468,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[]){
 	}
 	else if (atual.orientacao == 3){
 		/*procurar candidatos nas posicoes adequadas. Procurar esquerda, direita, baixo*/
-		for(int i = 0; i< sizeof(pecas)/ sizeof(peca); i++){
+		for(int i = 0; i< size; i++){
 			for (int k= 0; k<3; k++){
 				/*peça está rodada 3 vezes para a direita, lado esquerdo é agora lado direito.
 				 * nova peça se igual ao contrario da aresta 0 vai ligar do lado direito*/
@@ -583,7 +582,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[]){
 	}
 	else if (atual.orientacao == 4){
 		/*procurar candidatos nas posicoes adequadas. Procurar esquerda, direita, baixo*/
-		for(int i = 0; i< sizeof(pecas)/ sizeof(peca); i++){
+		for(int i = 0; i< size; i++){
 			for (int k= 0; k<3; k++){
 				/*aresta da esquerda é agora aresta da direita*/
 				if (pecas[i].arestas[k] == reverse_aresta(atual.arestas[0]) && pecas[i].used != 1){
@@ -696,7 +695,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[]){
 	}
 	else if (atual.orientacao == 5){
 		/*procurar candidatos nas posicoes adequadas. Procurar esquerda, direita, baixo*/
-		for(int i = 0; i< sizeof(pecas)/ sizeof(peca); i++){
+		for(int i = 0; i< size; i++){
 			for (int k= 0; k<3; k++){
 				/*aresta da esquerda é agora aresta de baixo */
 				if (pecas[i].arestas[k] == reverse_aresta(atual.arestas[0]) && pecas[i].used != 1){
