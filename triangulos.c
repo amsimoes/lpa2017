@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int maxscore = 0;
-
 
 typedef struct Peca {
 	int arestas[3][2];
@@ -10,6 +8,39 @@ typedef struct Peca {
 	int coords[2];
 	int used;
 } peca;
+
+int maxscore = 0;
+
+void output(peca* p, int size);
+int input(peca* p);
+void print_board(peca** tabuleiro, int size);
+peca *connected(int *coords, int orientacao, peca** tabuleiro);
+int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int size);
+
+int main(void) {
+	peca pecas[20];
+	int i;
+
+	int size = input(pecas);
+	if (size == 0) {
+		return 1;
+	}
+	printf("Numero de pecas = %d\n", size);
+	output(pecas, size);
+
+	peca **tabuleiro = (peca**) calloc(2*size, sizeof(peca*));
+	for(i=0;i<2*size;i++) {
+		tabuleiro[i] = (peca*) calloc(2*size, sizeof(peca));
+	}
+
+	/* print_board(tabuleiro, size); */
+
+	int score = 0;
+	score = search_connection(pecas[0], tabuleiro, score, pecas, size);
+	printf("%d\n", score);
+
+	return 0;
+}
 
 void output(peca* p, int size) {
 	int i;
@@ -49,6 +80,16 @@ int input(peca* pecas) {
 	return i;
 }
 
+void print_board(peca** tabuleiro, int size) {
+	int i, j;
+	for(i=0;i<2*size;i++) {
+		for(j=0;j<2*size;j++) {
+			printf("%d ", tabuleiro[i][j].used);
+		}
+		printf("\n");
+	}
+}
+
 /* PAR -> Em cima | IMPAR -> Em baixo */
 peca *connected(int *coords, int orientacao, peca **tabuleiro) {
 	peca vizinhas[3];	/* Esquerda | Direita | Cima ou Baixo */
@@ -69,45 +110,12 @@ peca *connected(int *coords, int orientacao, peca **tabuleiro) {
 	return vizinhas;
 }
 
-int main(void) {
-	peca pecas[20];
-	printf("%d\n", pecas[0].arestas[0][0]);
-	int i, j;
-
-	int size = input(pecas);
-	if (size == 0) {
-		return 1;
-	}
-	printf("Numero de pecas = %d\n", size);
-	output(pecas, size);
-
-	int score = 0;
-	peca **tabuleiro = (peca**) calloc(2*size, sizeof(peca*));
-	for(i=0;i<2*size;i++) {
-		tabuleiro[i] = (peca*) calloc(2*size, sizeof(peca));
-	}
-
-	for(i=0;i<2*size;i++) {
-		for(j=0;j<2*size;j++) {
-			printf("%d ", tabuleiro[i][j].used);
-		}
-		printf("\n");
-	}
-
-	/*for(i=0;i<size;i++) {
-		tabuleiro[size][size] = pecas[i];	// Peça inicial
-		pecas[i].used = 1;
-		pecas[i].coords = [size, size];
-	}*/
-
-	return 0;
-}
-
 int* reverse_aresta(int aresta[]){
-	int reversed[2];
-	reversed[0] = aresta[1];
-	reversed[1] = aresta[0];
-	return reversed;
+	int temp;
+	temp = aresta[0];
+	aresta[0] = aresta[1];
+	aresta[1] = temp;
+	return aresta;
 }
 
 /*
