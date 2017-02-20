@@ -125,6 +125,14 @@ peca *connected(int *coords, int orientacao, peca **tabuleiro) {
 	return vizinhas;
 }
 
+void define_posicao(Peca peca, Peca **tabuleiro, Peca pecas[], int x, int y, int orientacao, int i){
+	pecas[i].orientacao = orientacao;
+	tabuleiro[x][y] = pecas[i];
+	pecas[i].used = 1;
+	pecas[i].coords[0] = x;
+	pecas[i].coords[1] = y;
+}
+
 void get_candidates(Peca peca, Peca pecas[], Peca **tabuleiro) {
 		int i,j,k,l;
 		int x = peca.coords[0];
