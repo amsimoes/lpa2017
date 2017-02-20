@@ -139,7 +139,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 5;
 						nova.used = 1;
 						tabuleiro[x][y-1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas, size);
 					}
 					if (k==1 && tabuleiro[x][y-1].used == 0){
 						/*aresta do lado direito*/
@@ -148,7 +148,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 1;
 						nova.used = 1;
 						tabuleiro[x][y-1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas, size);
 					}
 					else if(tabuleiro[x][y-1].used == 0){
 						/*aresta de cima*/
@@ -158,7 +158,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.used = 1;
 						tabuleiro[x][y-1] = nova;
 
-						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas, size);
 					}
 				}
 				/*se encontrarmos o par contrario da aresta numa posicao 1, como os triangulos estao na posicao 0 originalmente, é a aresta da direita
@@ -176,7 +176,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
  						nova.orientacao = 1;
 						nova.used = 1;
 						tabuleiro[x][y+1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas, size);
 					}
 					if (k == 1 && tabuleiro[x][y+1].used == 0){
 						/*aresta do lado direito */
@@ -185,7 +185,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 3;
 						nova.used = 1;
 						tabuleiro[x][y+1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas, size);
 					}
 					else if(tabuleiro[x][y+1].used ==0){
 						/*aresta de cima*/
@@ -194,7 +194,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 5;
 						nova.used = 1;
 						tabuleiro[x][y+1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0],pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0],pecas, size);
 					}
 				}
 				/*se encontrarmos o par contrario da aresta numa posicao 2, como os triangulos estao na posicao 0 originalmente, é a aresta de cima
@@ -212,7 +212,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 5;
 						nova.used = 1;
 						tabuleiro[x+1][y] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas, size);
 					}
 					if (k == 1 && tabuleiro[x+1][y].used == 0){
 						/*aresta do lado direito FEITA*/
@@ -221,7 +221,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 1;
 						nova.used = 1;
 						tabuleiro[x+1][y] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas, size);
 					}
 					else if(tabuleiro[x+1][y].used == 0) {
 						/*aresta de cima*/
@@ -230,7 +230,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 3;
 						nova.used = 1;
 						tabuleiro[x][y+1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas, size);
 					}
 				}
 			}
@@ -255,7 +255,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
                         nova.orientacao = 4;
                         nova.used = 1;
                         tabuleiro[x][y-1] = nova;
-                        return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+                        return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas, size);
                     }
                     if (k == 1 && tabuleiro[x][y-1].used == 0){
                         /*aresta do lado direito*/
@@ -264,7 +264,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
                         nova.orientacao = 0;
                         nova.used = 1;
                         tabuleiro[x][y-1] = nova;
-                        return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+                        return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas, size);
                     }
                     else if(tabuleiro[x][y-1].used == 0){
                         /*aresta de cima*/
@@ -274,7 +274,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
                         nova.used = 1;
                         tabuleiro[x][y-1] = nova;
 
-                        return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas);
+                        return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas, size);
                     }
                 }
                     /*se encontrarmos o par contrario da aresta numa posicao 1, como os triangulos estao na posicao 0 originalmente, é a aresta da direita
@@ -292,7 +292,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
                         nova.orientacao = 0;
                         nova.used = 1;
                         tabuleiro[x][y+1] = nova;
-                        return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+                        return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas, size);
                     }
                     if (k == 1 && tabuleiro[x][y+1].used == 0){
                         /*aresta do lado direito */
@@ -301,7 +301,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
                         nova.orientacao = 2;
                         nova.used = 1;
                         tabuleiro[x][y+1] = nova;
-                        return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+                        return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas, size);
                     }
                     else if(tabuleiro[x][y+1].used ==0){
                         /*aresta de cima*/
@@ -310,7 +310,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
                         nova.orientacao = 4;
                         nova.used = 1;
                         tabuleiro[x][y+1] = nova;
-                        return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0],pecas);
+                        return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0],pecas, size);
                     }
                 }
                     /*se encontrarmos o par contrario da aresta numa posicao 2, como os triangulos estao na posicao 0 originalmente, é a aresta de baixo
@@ -328,7 +328,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
                         nova.orientacao = 2;
                         nova.used = 1;
                         tabuleiro[x+1][y] = nova;
-                        return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+                        return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas, size);
                     }
                     if (k == 1 && tabuleiro[x-1][y].used == 0){
                         /*aresta do lado direito*/
@@ -337,7 +337,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
                         nova.orientacao = 4;
                         nova.used = 1;
                         tabuleiro[x+1][y] = nova;
-                        return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+                        return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas, size);
                     }
                     else if(tabuleiro[x-1][y].used == 0){
                         /*aresta de cima*/
@@ -346,7 +346,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
                         nova.orientacao = 0;
                         nova.used = 1;
                         tabuleiro[x][y+1] = nova;
-                        return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas);
+                        return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas, size);
                     }
                 }
             }
@@ -371,7 +371,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 5;
 						nova.used = 1;
 						tabuleiro[x+1][y] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas, size);
 					}
 					if (k == 1 && tabuleiro[x+1][y].used == 0){
 						/*aresta do lado direito*/
@@ -380,7 +380,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 1;
 						nova.used = 1;
 						tabuleiro[x+1][y] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas, size);
 					}
 					else if(tabuleiro[x+1][y].used == 0){
 						/*aresta de cima*/
@@ -390,7 +390,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.used = 1;
 						tabuleiro[x+1][y] = nova;
 
-						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas, size);
 					}
 				}
 					/*se encontrou igual ao contrario do lado direito original, vai ter de ligar do lado esquerdo*/
@@ -407,7 +407,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 3;
 						nova.used = 1;
 						tabuleiro[x][y-1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas, size);
 					}
 					if (k == 1 && tabuleiro[x][y-1].used == 0){
 						/*aresta do lado direito */
@@ -416,7 +416,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 5;
 						nova.used = 1;
 						tabuleiro[x][y-1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas, size);
 					}
 					else if(tabuleiro[x][y-1].used ==0){
 						/*aresta de cima*/
@@ -425,7 +425,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 1;
 						nova.used = 1;
 						tabuleiro[x][y-1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0],pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0],pecas, size);
 					}
 				}
 					/*encontrou o contrario da aresta de cima , tem que ligar do lado direito agora*/
@@ -442,7 +442,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 1;
 						nova.used = 1;
 						tabuleiro[x+1][y] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas, size);
 					}
 					if (k == 1 && tabuleiro[x][y+1].used == 0){
 						/*aresta do lado direito*/
@@ -451,7 +451,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 3;
 						nova.used = 1;
 						tabuleiro[x+1][y] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas, size);
 					}
 					else if(tabuleiro[x][y+1].used == 0){
 						/*aresta de cima*/
@@ -460,7 +460,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 5;
 						nova.used = 1;
 						tabuleiro[x][y+1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas, size);
 					}
 				}
 			}
@@ -485,7 +485,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 0;
 						nova.used = 1;
 						tabuleiro[x][y+1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas, size);
 					}
 					if (k == 1 && tabuleiro[x][y+1].used == 0){
 						/*aresta do lado direito*/
@@ -494,7 +494,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 2;
 						nova.used = 1;
 						tabuleiro[x][y+1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas, size);
 					}
 					else if(tabuleiro[x][y+1].used == 0){
 						/*aresta de cima*/
@@ -504,7 +504,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.used = 1;
 						tabuleiro[x][y+1] = nova;
 
-						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas, size);
 					}
 				}
 					/*aresta do lado direito é agora a do lado esquerdo*/
@@ -521,7 +521,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 4;
 						nova.used = 1;
 						tabuleiro[x][y-1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas, size);
 					}
 					if (k == 1 && tabuleiro[x][y-1].used == 0){
 						/*aresta do lado direito */
@@ -530,7 +530,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 0;
 						nova.used = 1;
 						tabuleiro[x][y-1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas, size);
 					}
 					else if(tabuleiro[x][y-1].used ==0){
 						/*aresta de cima*/
@@ -539,7 +539,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 2;
 						nova.used = 1;
 						tabuleiro[x][y-1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0],pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0],pecas, size);
 					}
 				}
 					/*aresta de cima é agora a aresta de baixo*/
@@ -556,7 +556,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 2;
 						nova.used = 1;
 						tabuleiro[x-1][y] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas, size);
 					}
 					if (k == 1 && tabuleiro[x-1][y].used == 0){
 						/*aresta do lado direito*/
@@ -565,7 +565,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 4;
 						nova.used = 1;
 						tabuleiro[x-1][y] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas, size);
 					}
 					else if(tabuleiro[x-1][y].used == 0){
 						/*aresta de cima*/
@@ -574,7 +574,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 0;
 						nova.used = 1;
 						tabuleiro[x-1][y] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas, size);
 					}
 				}
 			}
@@ -598,7 +598,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 3;
 						nova.used = 1;
 						tabuleiro[x][y+1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas, size);
 					}
 					if (k == 1 && tabuleiro[x][y+1].used == 0){
 						/*aresta do lado direito*/
@@ -607,7 +607,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 5;
 						nova.used = 1;
 						tabuleiro[x][y+1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas, size);
 					}
 					else if(tabuleiro[x][y+1].used == 0){
 						/*aresta de cima*/
@@ -617,7 +617,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.used = 1;
 						tabuleiro[x][y+1] = nova;
 
-						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas, size);
 					}
 				}
 					/*aresta do lado direito é agora aresta de cima*/
@@ -634,7 +634,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 5;
 						nova.used = 1;
 						tabuleiro[x+1][y] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas, size);
 					}
 					if (k == 1 && tabuleiro[x+1][y].used == 0){
 						/*aresta do lado direito */
@@ -643,7 +643,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 1;
 						nova.used = 1;
 						tabuleiro[x+1][y] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas, size);
 					}
 					else if(tabuleiro[x+1][y].used ==0){
 						/*aresta de cima*/
@@ -652,7 +652,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 3;
 						nova.used = 1;
 						tabuleiro[x+1][y] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0],pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0],pecas, size);
 					}
 				}
 					/*aresta de cima é agora aresta do lado esquerdo */
@@ -669,7 +669,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 3;
 						nova.used = 1;
 						tabuleiro[x][y-1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas, size);
 					}
 					if (k == 1 && tabuleiro[x][y-1].used == 0){
 						/*aresta do lado direito*/
@@ -678,7 +678,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 5;
 						nova.used = 1;
 						tabuleiro[x][y-1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas, size);
 					}
 					else if(tabuleiro[x][y-1].used == 0){
 						/*aresta de cima*/
@@ -687,7 +687,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 1;
 						nova.used = 1;
 						tabuleiro[x][y-1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas, size);
 					}
 				}
 			}
@@ -711,7 +711,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 2;
 						nova.used = 1;
 						tabuleiro[x-1][y] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas, size);
 					}
 					if (k == 1 && tabuleiro[x-1][y].used == 0){
 						/*aresta do lado direito*/
@@ -720,7 +720,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 4;
 						nova.used = 1;
 						tabuleiro[x-1][y] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas, size);
 					}
 					else if(tabuleiro[x-1][y].used == 0){
 						/*aresta de cima*/
@@ -730,7 +730,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.used = 1;
 						tabuleiro[x-1][y] = nova;
 
-						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas, size);
 					}
 				}
 					/*aresta da direita é agora aresta da direita*/
@@ -747,7 +747,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 0;
 						nova.used = 1;
 						tabuleiro[x][y+1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas, size);
 					}
 					if (k == 1 && tabuleiro[x][y+1].used == 0){
 						/*aresta do lado direito */
@@ -756,7 +756,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 3;
 						nova.used = 1;
 						tabuleiro[x][y+1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas, size);
 					}
 					else if(tabuleiro[x][y+1].used ==0){
 						/*aresta de cima*/
@@ -765,7 +765,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 5;
 						nova.used = 1;
 						tabuleiro[x][y+1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0],pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0],pecas, size);
 					}
 				}
 					/*aresta de cima é agora aresta da esquerda */
@@ -782,7 +782,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 4;
 						nova.used = 1;
 						tabuleiro[x+1][y] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[0][1] + nova.arestas[0][0], pecas, size);
 					}
 					if (k == 1 && tabuleiro[x-1][y].used == 0){
 						/*aresta do lado direito*/
@@ -791,7 +791,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 0;
 						nova.used = 1;
 						tabuleiro[x+1][y] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[1][1] + nova.arestas[1][0], pecas, size);
 					}
 					else if(tabuleiro[x-1][y].used == 0){
 						/*aresta de cima*/
@@ -800,7 +800,7 @@ int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int
 						nova.orientacao = 2;
 						nova.used = 1;
 						tabuleiro[x][y+1] = nova;
-						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas);
+						return search_connection(nova, tabuleiro, score + nova.arestas[2][1] + nova.arestas[2][0], pecas, size);
 					}
 				}
 			}
