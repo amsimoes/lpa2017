@@ -26,18 +26,17 @@ int main(void) {
 		return 1;
 	}
 	printf("Numero de pecas = %d\n", size);
-	output(pecas, size);
 
 	peca **tabuleiro = (peca**) calloc(2*size, sizeof(peca*));
 	for(i=0;i<2*size;i++) {
 		tabuleiro[i] = (peca*) calloc(2*size, sizeof(peca));
 	}
 
-	/* print_board(tabuleiro, size); */
+	print_board(tabuleiro, size); 
 
 	int score = 0;
 	score = search_connection(pecas[0], tabuleiro, maxscore, pecas, size);
-	printf("%d\n", score);
+	/* printf("%d\n", score); */
 
 	return 0;
 }
@@ -80,15 +79,30 @@ int input(peca* pecas) {
 	return i;
 }
 
+int ingame(peca** tabuleiro, int size) {
+	int i = 0; int j = 0;
+	int count = 0;
+	for(i=0;i<2*size;i++) {
+		for(j=0;j<2*size;j++) {
+			if(tabuleiro[i][j].used == 1) 
+				count++;
+		}
+	}
+	return count;
+}
+
 void print_board(peca** tabuleiro, int size) {
 	int i, j;
+	printf("\n-> BOARD [%dx%d] [%d PECAS EM JOGO]\n", 2*size, 2*size, ingame(tabuleiro, size));
+	printf("+ "); for(j=0;j<2*size;j++) printf("+ + + + "); printf("+ \n");
 	for(i=0;i<2*size;i++) {
-		printf(" ");
+		printf("+ ");
 		for(j=0;j<2*size;j++) {
 			printf("(%d %d %d) ", tabuleiro[i][j].arestas[0][0], tabuleiro[i][j].arestas[1][0], tabuleiro[i][j].arestas[2][0]);
 		}
-		printf("\n");
+		printf("+\n");
 	}
+	printf("+ "); for(j=0;j<2*size;j++) printf("+ + + + "); printf("+ \n\n");
 }
 
 /* PAR -> Em cima | IMPAR -> Em baixo */
