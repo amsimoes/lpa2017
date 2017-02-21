@@ -64,10 +64,10 @@ void reset_peca(peca* p, int size) {
 
 void set_position(peca p, peca** tabuleiro, peca* pecas, int x, int y, int orientacao, int i) {
 	pecas[i].orientacao = orientacao;
-	tabuleiro[x][y] = pecas[i];
+	tabuleiro[y][x] = pecas[i];
 	pecas[i].used = 1;
-	pecas[i].coords[0] = x;
-	pecas[i].coords[1] = y;
+	pecas[i].coords[0] = y;
+	pecas[i].coords[1] = x;
 }
 
 int play(peca p, peca** tabuleiro, peca* pecas, int score, int size) {
@@ -81,7 +81,8 @@ int play(peca p, peca** tabuleiro, peca* pecas, int score, int size) {
 				if(p.arestas[k][3] != 1) {	/* Se aresta não está já ligada */
 					for(l=0;l<3;l++) {
 						if(p.arestas[k][0] == pecas[i].arestas[l][1] && p.arestas[k][1] == pecas[i].arestas[l][0]) {
-							p.arestas[k][3] = 1;
+							p.arestas[k][2] = 1;
+							pecas[i].arestas[l][2] = 1;
 							if(p.orientacao == 0) {
 								if(k == 0) { /* Nova peca na esquerda */
 									if(l == 0) {
@@ -240,9 +241,11 @@ int play(peca p, peca** tabuleiro, peca* pecas, int score, int size) {
 								}
 							}
 							score += pecas[i].arestas[l][0] + pecas[i].arestas[l][1];
-							int count = ingame(tabuleiro, size);
-							printf("PECAS JOGADAS = %d | SCORE = %d\n", count, score);
+							//printf("PECAS JOGADAS = %d | SCORE = %d\n", count, score);
+							printf("\nPECA = %d %d %d | COORDS = (%d, %d)\n",\
+							p.arestas[0][0], p.arestas[1][0], p.arestas[2][0], y, x);
 							print_board(tabuleiro, size);
+							printf("SCORE = %d\n", score);
 							play(pecas[i], tabuleiro, pecas, score, size);
 							reset_peca(&p, size);
 						}
@@ -322,8 +325,8 @@ int ingame(peca** tabuleiro, int size) {
 
 void print_board(peca** tabuleiro, int size) {
 	int i, j;
-	int count = ingame(tabuleiro, size);
-	printf("\n-> BOARD [%dx%d] [%d PECAS EM JOGO]\n", 2*size, 2*size, count);
+	//int count = ingame(tabuleiro, size);
+	printf("\n-> BOARD [%dx%d]\n", 2*size, 2*size);
 	printf("+ "); for(j=0;j<2*size;j++) printf("+ + + + "); printf("+ \n");
 	for(i=0;i<2*size;i++) {
 		printf("+ ");
