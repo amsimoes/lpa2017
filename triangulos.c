@@ -32,7 +32,7 @@ int main(void) {
 		tabuleiro[i] = (peca*) calloc(2*size, sizeof(peca));
 	}
 
-	print_board(tabuleiro, size); 
+	print_board(tabuleiro, size);
 
 	int score = 0;
 	score = search_connection(pecas[0], tabuleiro, maxscore, pecas, size);
@@ -84,7 +84,7 @@ int ingame(peca** tabuleiro, int size) {
 	int count = 0;
 	for(i=0;i<2*size;i++) {
 		for(j=0;j<2*size;j++) {
-			if(tabuleiro[i][j].used == 1) 
+			if(tabuleiro[i][j].used == 1)
 				count++;
 		}
 	}
@@ -125,6 +125,127 @@ peca *connected(int *coords, int orientacao, peca **tabuleiro) {
 	return vizinhas;
 }
 
+void define_posicao(Peca peca, Peca **tabuleiro, Peca pecas[], int x, int y, int orientacao, int i){
+	pecas[i].orientacao = orientacao;
+	tabuleiro[x][y] = pecas[i];
+	pecas[i].used = 1;
+	pecas[i].coords[0] = x;
+	pecas[i].coords[1] = y;
+}
+
+void get_candidates(Peca peca, Peca pecas[], Peca **tabuleiro) {
+		int i,j,k,l;
+		int x = peca.coords[0];
+		int score = 0;
+		int y = peca.coords[1];
+		for(i=0; i<pecas.length; i++){
+			//arestas
+				for(k=0;k<3;k++){
+					for(l=0;l<3;l++){
+						if(pecas[i].arestas[k][0] == peca.arestas[l][1] && pecas[i].arestas[k][1] == peca.arestas[l][0]){
+							if(k==0 && l==0){
+								if((peca.orientacao % 2) == 0){
+									define_posicao(peca, tabuleiro, pecas, x, y-1, 3);
+									return get_candidates(peca, pecas, tabuleiro, score);
+								}
+								else{
+									define_posicao(peca, tabuleiro, pecas, x+1, y, 2);
+									return get_candidates(peca, pecas, tabuleiro, score);
+								}
+							}
+							else if(k==0 && l==1){
+								if((peca.orientacao % 2) == 0){
+									define_posicao(peca, tabuleiro, pecas, x, y-1, 5);
+									return get_candidates(peca, pecas, tabuleiro, score);
+								}
+								else{
+									define_posicao(peca, tabuleiro, pecas, x+1, y, 0);
+									return get_candidates(peca, pecas, tabuleiro, score);
+								}
+							}
+							else if(k==0 && l==2){
+								if((peca.orientacao % 2) == 0){
+									define_posicao(peca, tabuleiro, pecas, x, y-1, 1);
+									return get_candidates(peca, pecas, tabuleiro, score);
+								}
+								else{
+									define_posicao(peca, tabuleiro, pecas, x+1, y, 4);
+									return get_candidates(peca, pecas, tabuleiro, score);
+								}
+							}
+							else if(k==1 && l==0){
+								if((peca.orientacao % 2) == 0){
+									define_posicao(peca, tabuleiro, pecas, x, y-1, 5);
+									return get_candidates(peca, pecas, tabuleiro, score);
+								}
+								else{
+									define_posicao(peca, tabuleiro, pecas, x+1, y, 4);
+									return get_candidates(peca, pecas, tabuleiro, score);
+								}
+							}
+							else if(k==1 && l==1){
+								if((peca.orientacao % 2) == 0){
+									define_posicao(peca, tabuleiro, pecas, x, y-1, 3);
+									return get_candidates(peca, pecas, tabuleiro, score);
+								}
+								else{
+									define_posicao(peca, tabuleiro, pecas, x+1, y, 2);
+									return get_candidates(peca, pecas, tabuleiro, score);
+								}
+							}
+							else if(k==1 && l==2){
+								if((peca.orientacao % 2) == 0){
+									define_posicao(peca, tabuleiro, pecas, x, y-1, 1);
+									return get_candidates(peca, pecas, tabuleiro, score);
+								}
+								else{
+									define_posicao(peca, tabuleiro, pecas, x+1, y, 0);
+									return get_candidates(peca, pecas, tabuleiro, score);
+								}
+							}
+							else if(k==2 && l==0){
+								if((peca.orientacao % 2) == 0){
+									define_posicao(peca, tabuleiro, pecas, x, y-1, 1);
+									return get_candidates(peca, pecas, tabuleiro, score);
+								}
+								else{
+									define_posicao(peca, tabuleiro, pecas, x+1, y, 0);
+									return get_candidates(peca, pecas, tabuleiro, score);
+								}
+							}
+							else if(k==2 && l==1){
+								if((peca.orientacao % 2) == 0){
+									define_posicao(peca, tabuleiro, pecas, x, y-1, 5);
+									return get_candidates(peca, pecas, tabuleiro, score);
+								}
+								else{
+									define_posicao(peca, tabuleiro, pecas, x+1, y, 4);
+									return get_candidates(peca, pecas, tabuleiro, score);
+								}
+							}
+							else if(k==2 && l==2){
+								if((peca.orientacao % 2) == 0){
+									define_posicao(peca, tabuleiro, pecas, x, y-1, 3);
+									return get_candidates(peca, pecas, tabuleiro, score);
+								}
+								else{
+									define_posicao(peca, tabuleiro, pecas, x+1, y, 2);
+									return get_candidates(peca, pecas, tabuleiro, score);
+								}
+							}
+							score = peca.arestas[k][0] + peca.arestas[k][1];
+							if(score > maxscore){
+								maxscore = score;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	return maxscore;
+}
+
 int* reverse_aresta(int aresta[]){
 	int temp;
 	temp = aresta[0];
@@ -132,14 +253,6 @@ int* reverse_aresta(int aresta[]){
 	aresta[1] = temp;
 	return aresta;
 }
-
-/*
-void flipa_arestas(peca peca, int num_rotatos){
-	/*arestasm devem ser esquerda[0], direita[1], cima/baixo[2]
-	for (int i = 0; i<num_rotatos; i++){
-		peca.arestas[0][0] = peca.arestas[0]
-	}
-}  */
 
 int search_connection(peca atual, peca** tabuleiro, int score, peca pecas[], int size){
 	/*comparar score com max score no fim e se for maior atualizar valor |||||||||| quando atualizar valor de score?*/
