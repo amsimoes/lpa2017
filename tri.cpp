@@ -29,21 +29,20 @@ int main(void) {
 	if (size == 0) {
 		return 1;
 	}
-	printf("Numero de pecas = %d\n", size);
+	//printf("Numero de pecas = %d\n", size);
 
-	peca **tabuleiro = (peca**) calloc(2*size+1, sizeof(peca*));
-	for(i=0;i<2*size+1;i++) {
-		tabuleiro[i] = (peca*) calloc(2*size+1, sizeof(peca));
+	peca **tabuleiro = (peca**) calloc(2*size, sizeof(peca*));
+	for(i=0;i<2*size;i++) {
+		tabuleiro[i] = (peca*) calloc(2*size, sizeof(peca));
 	}
 
 	for(i=0;i<size;i++) {
-		printf("i = %d\n", i);
 		pecas[i].coords[0] = size;  pecas[i].coords[1] = size;
 		set_position(tabuleiro, pecas, size, size, 0, i);
 		play(pecas[i], tabuleiro, pecas, 0, size);
 	}
 
-	printf("maxscore: %d\n", maxscore);
+	printf("%d\n", maxscore);
 
 	return 0;
 }
@@ -245,12 +244,10 @@ int play(peca p, peca** tabuleiro, peca* pecas, int score, int size) {
 							//printf("PECAS JOGADAS = %d | SCORE = %d\n", count, score);
 							//printf("\nPECA = %d %d %d | COORDS = (%d, %d)\n",
 							//pecas[i].arestas[0][0], pecas[i].arestas[1][0], pecas[i].arestas[2][0], y, x);
-							print_board(tabuleiro, size);
-							printf("SCORE = %d\n", score);
+							//print_board(tabuleiro, size);
+							//printf("SCORE = %d\n", score);
 							play(pecas[i], tabuleiro, pecas, score, size);
 							reset_peca(&p, size);
-							if(i==size-1)
-								score -= pecas[i].arestas[l][0] + pecas[i].arestas[l][1];
 						}
 					}
 				}
@@ -260,10 +257,8 @@ int play(peca p, peca** tabuleiro, peca* pecas, int score, int size) {
 	if(score > maxscore) {
 		maxscore = score;
 	} 
-	peca p_aux; 
-	default_peca(&p_aux);
-	tabuleiro[y][x] = p_aux;
-
+	peca p_aux; default_peca(&p_aux);
+	tabuleiro[x][y] = p_aux;
 	return 0;	
 }
 
