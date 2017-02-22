@@ -27,9 +27,10 @@ void check_repeated(peca* pecas, int size);
 void print_puzzle();
 
 int main(void) {
-	clock_t begin = clock();
+	//clock_t begin = clock();
 	peca *pecas = (peca*) calloc(20, sizeof(peca));
-	int i = 0;
+	int i = 0; 
+	//int j = 0;
 		
 	int size = input(pecas);
 	if (size == 0) {
@@ -44,21 +45,22 @@ int main(void) {
 	for(i=0;i<size;i++) {
 		pecas[i].coords[0] = size;  
 		pecas[i].coords[1] = size;
-		set_position(tabuleiro, pecas, size, size, 0, i);
-		if(jogadas.size() != 0) {
-			jogadas.at(0) = pecas[i];
-		} else {
-			jogadas.push_back(pecas[i]);
-		}
+		pecas[i].orientacao = 0;
+		pecas[i].used = 1;
+		tabuleiro[size][size] = pecas[i];
+		jogadas.push_back(pecas[i]);
 		play(tabuleiro, pecas, 0, size);
-		//printf("[i = %d] | Main | Puzzle Size = %lu\n", i, jogadas.size());
-		pecas[i].used = 0;
+		jogadas.clear();
+		/*for(j=0;j<size;j++) {
+			printf("usada = %d\n", pecas[j].used);
+		}*/
+		//pecas[i].used = 0;
 	}
 
 	printf("%d\n", maxscore);
-	clock_t end = clock();
-	double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
-	printf("%f\n", time_spent);
+	//clock_t end = clock();
+	//double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+	//printf("%f\n", time_spent);
 	return 0;
 }
 
