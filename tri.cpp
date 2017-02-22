@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <algorithm>
+#include <vector>
 
 typedef struct Peca {
 	int arestas[3][3];
@@ -10,36 +12,55 @@ typedef struct Peca {
 } peca;
 
 int maxscore = 0;
+int repetidos = 0;
+std::vector<peca> jogadas;
 
 void output(peca* p, int size);
 int input(peca* p);
 void print_board(peca** tabuleiro, int size);
 void set_position(peca** tabuleiro, peca* pecas, int x, int y, int orientacao, int i);
-int play(peca p, peca** tabuleiro, peca* pecas, int score, int size);
-void reset_peca(peca* p, int size);
+int play(peca** tabuleiro, peca* pecas, int score, int size);
+void reset_peca(peca* p);
 int ingame(peca** tabuleiro, int size);
 void default_peca(peca* p);
-
+void check_repeated(peca* pecas, int size);
 
 int main(void) {
-	peca pecas[20];
-	int i;
+	peca *pecas = (peca*) calloc(20, sizeof(peca));
+	int i = 0;
+	int j = 0;
 
 	int size = input(pecas);
 	if (size == 0) {
 		return 1;
 	}
-	//printf("Numero de pecas = %d\n", size);
 
-	peca **tabuleiro = (peca**) calloc(2*size, sizeof(peca*));
-	for(i=0;i<2*size;i++) {
-		tabuleiro[i] = (peca*) calloc(2*size, sizeof(peca));
+	//check_repeated(pecas, size);
+	//printf("Tem repetidos = %d\n", repetidos);
+
+	peca **tabuleiro = (peca**) calloc(2*size+1, sizeof(peca*));
+	for(i=0;i<2*size+1;i++) {
+		tabuleiro[i] = (peca*) calloc(2*size+1, sizeof(peca));
 	}
 
 	for(i=0;i<size;i++) {
+		//printf("main i = %d\n", i);
 		pecas[i].coords[0] = size;  pecas[i].coords[1] = size;
 		set_position(tabuleiro, pecas, size, size, 0, i);
-		play(pecas[i], tabuleiro, pecas, 0, size);
+		//printf("jogadas.size = %lu\n", jogadas.size());
+		if(jogadas.size() != 0){
+			jogadas.at(0) = pecas[i];
+		}
+		else
+			jogadas.push_back(pecas[i]);
+		play(tabuleiro, pecas, 0, size);
+		//printf("erase main\n");
+		//jogadas.erase(jogadas.begin()+ jogadas.size());
+		//printf("after erase\n");
+		for(j=0;j<size;j++) {
+			pecas[j].used = 0;
+			pecas[j].orientacao = 0;
+		}
 	}
 
 	printf("%d\n", maxscore);
@@ -47,14 +68,24 @@ int main(void) {
 	return 0;
 }
 
-/*int check_lock(peca peca, peca** tabuleiro, peca *pecas, int x, int y, int orientacao, int i) {
-	Verificar diagonais (que têm a mesma orientacao) 
-	return 1;
-} */ 
+void check_repeated(peca* pecas, int size) {
+	int i = 0, j = 0;
+	for(i=0;i<size;i++){
+		for(j=i+1;j<size-1;j++) {
+			if(pecas[i].arestas[0][0] == pecas[j].arestas[0][0] && \
+			   pecas[i].arestas[1][0] == pecas[j].arestas[1][0] && \
+			   pecas[i].arestas[2][0] == pecas[j].arestas[2][0]) {
+				repetidos = 1;
+				return;
+			}
+		}
+	}
+	return;
+}
 
-void reset_peca(peca* p, int size) {
+void reset_peca(peca* p) {
 	int i;
-	for(i=0;i<size;i++) {
+	for(i=0;i<3;i++) {
 		p->arestas[i][2] = 0;
 	}
 	p->used = 0;
@@ -70,184 +101,194 @@ void set_position(peca** tabuleiro, peca* pecas, int x, int y, int orientacao, i
 	pecas[i].coords[1] = x;
 }
 
-int play(peca p, peca** tabuleiro, peca* pecas, int score, int size) {
-	int i, k, l;
-	int x = p.coords[1]; 
-	int y = p.coords[0];
-	for(i=0;i<size;i++) {
-		//printf("USADA = %d\n", pecas[i].used);
-		if(pecas[i].used != 1) {
-			for(k=0;k<3;k++) {
-				if(p.arestas[k][2] != 1) {	/* Se aresta não está já ligada */
-					for(l=0;l<3;l++) {
-						if(p.arestas[k][0] == pecas[i].arestas[l][1] && p.arestas[k][1] == pecas[i].arestas[l][0]) {
-							p.arestas[k][2] = 1;
-							pecas[i].arestas[l][2] = 1;
-							if(p.orientacao == 0) {
-								if(k == 0) { /* Nova peca na esquerda */
-									if(l == 0) {
-										set_position(tabuleiro, pecas, x-1, y, 1, i);
-									} else if(l == 1) {
-										set_position(tabuleiro, pecas, x-1, y, 5, i);
-									} else if(l == 2) {
-										set_position(tabuleiro, pecas, x-1, y, 3, i);
+int play(peca** tabuleiro, peca* pecas, int score, int size) {
+	int i=0, k=0, l=0, h=0;
+	int x;
+	int y;
+	for(h=0;h<jogadas.size();h++){
+		x=jogadas.at(h).coords[1];
+		y=jogadas.at(h).coords[0];
+		for(i=0;i<size;i++) {
+			if(pecas[i].used != 1) {
+				//printf("pecas[%d].used = %d\n", i, pecas[i].used);
+				for(k=0;k<3;k++) {
+					if(jogadas.at(h).arestas[k][2] != 1) {	/* Se aresta não está já ligada */
+						for(l=0;l<3;l++) {
+							if(jogadas.at(h).arestas[k][0] == pecas[i].arestas[l][1] && jogadas.at(h).arestas[k][1] == pecas[i].arestas[l][0]) {
+								/*printf("Peca a testar = %d %d %d | Used = %d\n",pecas[i].arestas[0][0],\
+								pecas[i].arestas[1][0], pecas[i].arestas[2][0], pecas[i].used);*/
+								//printf("Coordenadas = (%d, %d)\n", x, y);
+								jogadas.at(h).arestas[k][2] = 1;
+								pecas[i].arestas[l][2] = 1;
+								if(jogadas.at(h).orientacao == 0) {
+									if(k == 0) { /* Nova peca na esquerda */
+										if(l == 0) {
+											set_position(tabuleiro, pecas, x-1, y, 1, i);
+										} else if(l == 1) {
+											set_position(tabuleiro, pecas, x-1, y, 5, i);
+										} else if(l == 2) {
+											set_position(tabuleiro, pecas, x-1, y, 3, i);
+										}
+									} else if(k == 1) { /* Nova peca em cima */
+										if(l == 0) {
+											set_position(tabuleiro, pecas, x, y-1, 3, i);
+										} else if(l == 1) {
+											set_position(tabuleiro, pecas, x, y-1, 1, i);
+										} else if(l == 2) {
+											set_position(tabuleiro, pecas, x, y-1, 5, i);
+										}
+									} else if(k == 2) { /* Nova peca na direita */
+										if(l == 0) {
+											set_position(tabuleiro, pecas, x+1, y, 5, i);
+										} else if(l == 1) {
+											set_position(tabuleiro, pecas, x+1, y, 3, i);
+										} else if(l == 2) {
+											set_position(tabuleiro, pecas, x+1, y, 1, i);
+										}
 									}
-								} else if(k == 1) { /* Nova peca em cima */
-									if(l == 0) {
-										set_position(tabuleiro, pecas, x, y-1, 3, i);
-									} else if(l == 1) {
-										set_position(tabuleiro, pecas, x, y-1, 1, i);
-									} else if(l == 2) {
-										set_position(tabuleiro, pecas, x, y-1, 5, i);
+								} else if(jogadas.at(h).orientacao == 1) {
+									if(k == 0) { /* Nova peca na direita */
+										if(l == 0) {
+											set_position(tabuleiro, pecas, x+1, y, 0, i);
+										} else if(l == 1) {
+											set_position(tabuleiro, pecas, x+1, y, 4, i);
+										} else if(l == 2) {
+											set_position(tabuleiro, pecas, x+1, y, 2, i);
+										}
+									} else if(k == 1) { /* Nova peca em baixo */
+										if(l == 0) {
+											set_position(tabuleiro, pecas, x, y+1, 2, i);
+										} else if(l == 1) {
+											set_position(tabuleiro, pecas, x, y+1, 0, i);
+										} else if(l == 2) {
+											set_position(tabuleiro, pecas, x, y+1, 4, i);
+										}
+									} else if(k == 2) { /* Nova peca na esquerda */
+										if(l == 0) {
+											set_position(tabuleiro, pecas, x-1, y, 4, i);
+										} else if(l == 1) {
+											set_position(tabuleiro, pecas, x-1, y, 2, i);
+										} else if(l == 2) {
+											set_position(tabuleiro, pecas, x-1, y, 0, i);
+										}
 									}
-								} else if(k == 2) { /* Nova peca na direita */
-									if(l == 0) {
-										set_position(tabuleiro, pecas, x+1, y, 5, i);
-									} else if(l == 1) {
-										set_position(tabuleiro, pecas, x+1, y, 3, i);
-									} else if(l == 2) {
-										set_position(tabuleiro, pecas, x+1, y, 1, i);
+								} else if(jogadas.at(h).orientacao == 2) {
+									if(k == 0) { /* Nova peca em cima */
+										if(l == 0) {
+											set_position(tabuleiro, pecas, x, y-1, 3, i);
+										} else if(l == 1) {
+											set_position(tabuleiro, pecas, x, y-1, 1, i);
+										} else if(l == 2) {
+											set_position(tabuleiro, pecas, x, y-1, 5, i);
+										}
+									} else if(k == 1) { /* Nova peca na direita */
+										if(l == 0) {
+											set_position(tabuleiro, pecas, x+1, y, 5, i);
+										} else if(l == 1) {
+											set_position(tabuleiro, pecas, x+1, y, 3, i);
+										} else if(l == 2) {
+											set_position(tabuleiro, pecas, x+1, y, 1, i);
+										}
+									} else if(k == 2) { /* Nova peca na esquerda */
+										if(l == 0) {
+											set_position(tabuleiro, pecas, x-1, y, 1, i);
+										} else if(l == 1) {
+											set_position(tabuleiro, pecas, x-1, y, 5, i);
+										} else if(l == 2) {
+											set_position(tabuleiro, pecas, x-1, y, 3, i);
+										}
+									}
+								} else if(jogadas.at(h).orientacao == 3) {
+									if(k == 0) { /* Nova peca em baixo */
+										if(l == 0) {
+											set_position(tabuleiro, pecas, x, y+1, 2, i);
+										} else if(l == 1) {
+											set_position(tabuleiro, pecas, x, y+1, 0, i);
+										} else if(l == 2) {
+											set_position(tabuleiro, pecas, x, y+1, 4, i);
+										}
+									} else if(k == 1) { /* Nova peca na esquerda */
+										if(l == 0) {
+											set_position(tabuleiro, pecas, x-1, y, 4, i);
+										} else if(l == 1) {
+											set_position(tabuleiro, pecas, x-1, y, 2, i);
+										} else if(l == 2) {
+											set_position(tabuleiro, pecas, x-1, y, 0, i);
+										}
+									} else if(k == 2) { /* Nova peca na direita */
+										if(l == 0) {
+											set_position(tabuleiro, pecas, x+1, y, 0, i);
+										} else if(l == 1) {
+											set_position(tabuleiro, pecas, x+1, y, 4, i);
+										} else if(l == 2) {
+											set_position(tabuleiro, pecas, x+1, y, 2, i);
+										}
+									}
+								} else if(jogadas.at(h).orientacao == 4) {
+									if(k == 0) { /* Nova peca na direita */
+										if(l == 0) {
+											set_position(tabuleiro, pecas, x+1, y, 5, i);
+										} else if(l == 1) {
+											set_position(tabuleiro, pecas, x+1, y, 3, i);
+										} else if(l == 2) {
+											set_position(tabuleiro, pecas, x+1, y, 1, i);
+										}
+									} else if(k == 1) { /* Nova peca na esquerda */
+										if(l == 0) {
+											set_position(tabuleiro, pecas, x-1, y, 1, i);
+										} else if(l == 1) {
+											set_position(tabuleiro, pecas, x-1, y, 5, i);
+										} else if(l == 2) {
+											set_position(tabuleiro, pecas, x-1, y, 3, i);
+										}
+									} else if(k == 2) { /* Nova peca em cima */
+										if(l == 0) {
+											set_position(tabuleiro, pecas, x, y-1, 3, i);
+										} else if(l == 1) {
+											set_position(tabuleiro, pecas, x, y-1, 1, i);
+										} else if(l == 2) {
+											set_position(tabuleiro, pecas, x, y-1, 5, i);
+										}
+									}
+								} else if(jogadas.at(h).orientacao == 5) {
+									if(k == 0) { /* Nova peca na esquerda */
+										if(l == 0) {
+											set_position(tabuleiro, pecas, x-1, y, 4, i);
+										} else if(l == 1) {
+											set_position(tabuleiro, pecas, x-1, y, 2, i);
+										} else if(l == 2) {
+											set_position(tabuleiro, pecas, x-1, y, 0, i);
+										}
+									} else if(k == 1) { /* Nova peca na direita */
+										if(l == 0) {
+											set_position(tabuleiro, pecas, x+1, y, 0, i);
+										} else if(l == 1) {
+											set_position(tabuleiro, pecas, x+1, y, 4, i);
+										} else if(l == 2) {
+											set_position(tabuleiro, pecas, x+1, y, 2, i);
+										}
+									} else if(k == 2) { /* Nova peca em baixo */
+										if(l == 0) {
+											set_position(tabuleiro, pecas, x, y-1, 2, i);
+										} else if(l == 1) {
+											set_position(tabuleiro, pecas, x, y-1, 0, i);
+										} else if(l == 2) {
+											set_position(tabuleiro, pecas, x, y-1, 4, i);
+										}
 									}
 								}
-							} else if(p.orientacao == 1) {
-								if(k == 0) { /* Nova peca na direita */
-									if(l == 0) {
-										set_position(tabuleiro, pecas, x+1, y, 0, i);
-									} else if(l == 1) {
-										set_position(tabuleiro, pecas, x+1, y, 4, i);
-									} else if(l == 2) {
-										set_position(tabuleiro, pecas, x+1, y, 2, i);
-									}
-								} else if(k == 1) { /* Nova peca em baixo */
-									if(l == 0) {
-										set_position(tabuleiro, pecas, x, y+1, 2, i);
-									} else if(l == 1) {
-										set_position(tabuleiro, pecas, x, y+1, 0, i);
-									} else if(l == 2) {
-										set_position(tabuleiro, pecas, x, y+1, 4, i);
-									}
-								} else if(k == 2) { /* Nova peca na esquerda */
-									if(l == 0) {
-										set_position(tabuleiro, pecas, x-1, y, 4, i);
-									} else if(l == 1) {
-										set_position(tabuleiro, pecas, x-1, y, 2, i);
-									} else if(l == 2) {
-										set_position(tabuleiro, pecas, x-1, y, 0, i);
-									}
-								}
-							} else if(p.orientacao == 2) {
-								if(k == 0) { /* Nova peca em cima */
-									if(l == 0) {
-										set_position(tabuleiro, pecas, x, y-1, 3, i);
-									} else if(l == 1) {
-										set_position(tabuleiro, pecas, x, y-1, 1, i);
-									} else if(l == 2) {
-										set_position(tabuleiro, pecas, x, y-1, 5, i);
-									}
-								} else if(k == 1) { /* Nova peca na direita */
-									if(l == 0) {
-										set_position(tabuleiro, pecas, x+1, y, 5, i);
-									} else if(l == 1) {
-										set_position(tabuleiro, pecas, x+1, y, 3, i);
-									} else if(l == 2) {
-										set_position(tabuleiro, pecas, x+1, y, 1, i);
-									}
-								} else if(k == 2) { /* Nova peca na esquerda */
-									if(l == 0) {
-										set_position(tabuleiro, pecas, x-1, y, 1, i);
-									} else if(l == 1) {
-										set_position(tabuleiro, pecas, x-1, y, 5, i);
-									} else if(l == 2) {
-										set_position(tabuleiro, pecas, x-1, y, 3, i);
-									}
-								}
-							} else if(p.orientacao == 3) {
-								if(k == 0) { /* Nova peca em baixo */
-									if(l == 0) {
-										set_position(tabuleiro, pecas, x, y+1, 2, i);
-									} else if(l == 1) {
-										set_position(tabuleiro, pecas, x, y+1, 0, i);
-									} else if(l == 2) {
-										set_position(tabuleiro, pecas, x, y+1, 4, i);
-									}
-								} else if(k == 1) { /* Nova peca na esquerda */
-									if(l == 0) {
-										set_position(tabuleiro, pecas, x-1, y, 4, i);
-									} else if(l == 1) {
-										set_position(tabuleiro, pecas, x-1, y, 2, i);
-									} else if(l == 2) {
-										set_position(tabuleiro, pecas, x-1, y, 0, i);
-									}
-								} else if(k == 2) { /* Nova peca na direita */
-									if(l == 0) {
-										set_position(tabuleiro, pecas, x+1, y, 0, i);
-									} else if(l == 1) {
-										set_position(tabuleiro, pecas, x+1, y, 4, i);
-									} else if(l == 2) {
-										set_position(tabuleiro, pecas, x+1, y, 2, i);
-									}
-								}
-							} else if(p.orientacao == 4) {
-								if(k == 0) { /* Nova peca na direita */
-									if(l == 0) {
-										set_position(tabuleiro, pecas, x+1, y, 5, i);
-									} else if(l == 1) {
-										set_position(tabuleiro, pecas, x+1, y, 3, i);
-									} else if(l == 2) {
-										set_position(tabuleiro, pecas, x+1, y, 1, i);
-									}
-								} else if(k == 1) { /* Nova peca na esquerda */
-									if(l == 0) {
-										set_position(tabuleiro, pecas, x-1, y, 1, i);
-									} else if(l == 1) {
-										set_position(tabuleiro, pecas, x-1, y, 5, i);
-									} else if(l == 2) {
-										set_position(tabuleiro, pecas, x-1, y, 3, i);
-									}
-								} else if(k == 2) { /* Nova peca em cima */
-									if(l == 0) {
-										set_position(tabuleiro, pecas, x, y-1, 3, i);
-									} else if(l == 1) {
-										set_position(tabuleiro, pecas, x, y-1, 1, i);
-									} else if(l == 2) {
-										set_position(tabuleiro, pecas, x, y-1, 5, i);
-									}
-								}
-							} else if(p.orientacao == 5) {
-								if(k == 0) { /* Nova peca na esquerda */
-									if(l == 0) {
-										set_position(tabuleiro, pecas, x-1, y, 4, i);
-									} else if(l == 1) {
-										set_position(tabuleiro, pecas, x-1, y, 2, i);
-									} else if(l == 2) {
-										set_position(tabuleiro, pecas, x-1, y, 0, i);
-									}
-								} else if(k == 1) { /* Nova peca na direita */
-									if(l == 0) {
-										set_position(tabuleiro, pecas, x, y-1, 0, i);
-									} else if(l == 1) {
-										set_position(tabuleiro, pecas, x, y-1, 4, i);
-									} else if(l == 2) {
-										set_position(tabuleiro, pecas, x, y-1, 2, i);
-									}
-								} else if(k == 2) { /* Nova peca em baixo */
-									if(l == 0) {
-										set_position(tabuleiro, pecas, x+1, y, 2, i);
-									} else if(l == 1) {
-										set_position(tabuleiro, pecas, x+1, y, 0, i);
-									} else if(l == 2) {
-										set_position(tabuleiro, pecas, x+1, y, 4, i);
-									}
-								}
+								//printf("Novas coordenadas = (%d, %d)\n", pecas[i].coords[0], pecas[i].coords[1]);
+								score += pecas[i].arestas[l][0] + pecas[i].arestas[l][1];
+								jogadas.push_back(pecas[i]);
+								play(tabuleiro, pecas, score, size);
+								jogadas.pop_back();
+								peca p_aux;
+								default_peca(&p_aux);
+								tabuleiro[pecas[i].coords[0]][pecas[i].coords[1]] = p_aux;
+								reset_peca(&pecas[i]);
+								jogadas.at(h).arestas[k][2] = 0;
+								score -= pecas[i].arestas[l][0] + pecas[i].arestas[l][1];
 							}
-							score += pecas[i].arestas[l][0] + pecas[i].arestas[l][1];
-							//printf("PECAS JOGADAS = %d | SCORE = %d\n", count, score);
-							//printf("\nPECA = %d %d %d | COORDS = (%d, %d)\n",
-							//pecas[i].arestas[0][0], pecas[i].arestas[1][0], pecas[i].arestas[2][0], y, x);
-							//print_board(tabuleiro, size);
-							//printf("SCORE = %d\n", score);
-							play(pecas[i], tabuleiro, pecas, score, size);
-							reset_peca(&p, size);
 						}
 					}
 				}
@@ -256,10 +297,11 @@ int play(peca p, peca** tabuleiro, peca* pecas, int score, int size) {
 	}
 	if(score > maxscore) {
 		maxscore = score;
-	} 
-	peca p_aux; default_peca(&p_aux);
-	tabuleiro[x][y] = p_aux;
-	return 0;	
+	}
+	peca p_aux;
+	default_peca(&p_aux);
+	tabuleiro[y][x] = p_aux;
+	return 0;
 }
 
 void default_peca(peca* p) {
@@ -304,8 +346,15 @@ int input(peca* pecas) {
 		pecas[i].arestas[2][0] = v3;
 		pecas[i].arestas[2][1] = v1;
 
+		pecas[i].arestas[0][2] = 0;
+		pecas[i].arestas[1][2] = 0;
+		pecas[i].arestas[2][2] = 0;
+
 		pecas[i].coords[0] = -1;
 		pecas[i].coords[1] = -1;
+
+		pecas[i].used = 0;
+		pecas[i].orientacao = 0;
 		i++;
 	}
 	return i;
@@ -313,10 +362,10 @@ int input(peca* pecas) {
 
 int ingame(peca** tabuleiro, int size) {
 	int i = 0; int j = 0;
-	int count;
+	int count = 0;
 	for(i=0;i<2*size;i++) {
 		for(j=0;j<2*size;j++) {
-			if(tabuleiro[i][j].used == 1) 
+			if(tabuleiro[i][j].used == 1)
 				count++;
 		}
 	}
@@ -337,8 +386,6 @@ void print_board(peca** tabuleiro, int size) {
 	}
 	printf("+ "); for(j=0;j<2*size;j++) printf("+ + + + "); printf("+ \n\n");
 }
-
-
 
 int* reverse_aresta(int aresta[]){
 	int temp;
