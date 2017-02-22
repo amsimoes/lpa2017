@@ -121,12 +121,64 @@ int play(peca** tabuleiro, peca* pecas, int score, int size) {
 								pecas[i].arestas[l][2] = 1;
 								if(jogadas.at(h).orientacao == 0) {
 									if(k == 0) { /* Nova peca na esquerda */
-										if(l == 0) {
-											set_position(tabuleiro, pecas, x-1, y, 1, i);
-										} else if(l == 1) {
-											set_position(tabuleiro, pecas, x-1, y, 5, i);
-										} else if(l == 2) {
-											set_position(tabuleiro, pecas, x-1, y, 3, i);
+										/* SE TEM ALGUM BURACO */
+										if(tabuleiro[x-2][y].used == 1 || tabuleiro[x-1][y+1].used == 1) {
+											if(tabuleiro[x-1][y+1].used == 1) {
+												if(l == 2) {
+													if(tabuleiro[x-1][y+1].orientacao == 0) {
+														if(tabuleiro[x-1][y+1].arestas[1][0] == pecas[i].arestas[0][1] && tabuleiro[x-1][y+1].arestas[0][1] == pecas[i].arestas[1][0]) {
+															if(tabuleiro[x-2][y].orientacao == 0) {
+																if(tabuleiro[x-2][y].arestas[1][0] == pecas[i].arestas[0][1] && tabuleiro[x-2][y].arestas[0][1] == pecas[i].arestas[1][0]) {
+																	set_position(tabuleiro, pecas, x-1, y, 3, i);
+																}
+															} else if(tabuleiro[x-2][y].orientacao == 2) {
+																if(tabuleiro[x-2][y].arestas[1][0] == pecas[i].arestas[0][1] && tabuleiro[x-2][y].arestas[0][1] == pecas[i].arestas[1][0]) {
+																	set_position(tabuleiro, pecas, x-1, y, 3, i);
+																}
+															} else if(tabuleiro[x-2][y].orientacao == 4) {
+																if(tabuleiro[x-2][y].arestas[1][0] == pecas[i].arestas[0][1] && tabuleiro[x-2][y].arestas[0][1] == pecas[i].arestas[1][0]) {
+																	set_position(tabuleiro, pecas, x-1, y, 3, i);
+																}
+															}
+														} 
+													} else if(tabuleiro[x-1][y+1].orientacao == 2) {
+														
+													} else if(tabuleiro[x-1][y+1].orientacao == 4) {
+														
+													}
+												} else if(l == 1) {
+													if(tabuleiro[x-1][y+1].orientacao == 0) {
+														if(tabuleiro[x-1][y+1].arestas[1][0] == pecas[i].arestas[0][1] && tabuleiro[x-1][y+1].arestas[0][1] == pecas[i].arestas[1][0]) {
+															if(tabuleiro[x-2][y].orientacao == 0) {
+																if(tabuleiro[x-2][y].arestas[1][0] == pecas[i].arestas[0][1] && tabuleiro[x-2][y].arestas[0][1] == pecas[i].arestas[1][0]) {
+																	set_position(tabuleiro, pecas, x-1, y, 3, i);
+																}
+															} else if(tabuleiro[x-2][y].orientacao == 2) {
+																if(tabuleiro[x-2][y].arestas[1][0] == pecas[i].arestas[0][1] && tabuleiro[x-2][y].arestas[0][1] == pecas[i].arestas[1][0]) {
+																	set_position(tabuleiro, pecas, x-1, y, 3, i);
+																}
+															} else if(tabuleiro[x-2][y].orientacao == 4) {
+																if(tabuleiro[x-2][y].arestas[1][0] == pecas[i].arestas[0][1] && tabuleiro[x-2][y].arestas[0][1] == pecas[i].arestas[1][0]) {
+																	set_position(tabuleiro, pecas, x-1, y, 3, i);
+																}
+															}
+														} 
+													}
+												} else if(l == 0) {
+
+												}
+											}
+										} else {
+												if(l == 0) {
+													set_position(tabuleiro, pecas, x-1, y, 1, i);
+												} else if(l == 1) {
+													set_position(tabuleiro, pecas, x-1, y, 5, i);
+												} else if(l == 2) {
+													set_position(tabuleiro, pecas, x-1, y, 3, i);
+												}
+											}
+										} else {
+
 										}
 									} else if(k == 1) { /* Nova peca em cima */
 										if(l == 0) {
