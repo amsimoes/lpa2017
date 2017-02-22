@@ -28,7 +28,7 @@ void check_repeated(peca* pecas, int size);
 int main(void) {
 	peca *pecas = (peca*) calloc(20, sizeof(peca));
 	int i = 0;
-	int j = 0;
+		
 
 	int size = input(pecas);
 	if (size == 0) {
@@ -57,10 +57,6 @@ int main(void) {
 		//printf("erase main\n");
 		//jogadas.erase(jogadas.begin()+ jogadas.size());
 		//printf("after erase\n");
-		for(j=0;j<size;j++) {
-			pecas[j].used = 0;
-			pecas[j].orientacao = 0;
-		}
 	}
 
 	printf("%d\n", maxscore);
@@ -102,7 +98,8 @@ void set_position(peca** tabuleiro, peca* pecas, int x, int y, int orientacao, i
 }
 
 int play(peca** tabuleiro, peca* pecas, int score, int size) {
-	int i=0, k=0, l=0, h=0;
+	int i=0, k=0, l=0;
+	unsigned int h=0;
 	int x;
 	int y;
 	for(h=0;h<jogadas.size();h++){
