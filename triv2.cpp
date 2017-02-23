@@ -12,7 +12,7 @@ typedef struct Peca {
 	int orientacao;
 	int coords[2];
   std::vector<Peca> matches;
-	std::vector<std::pair<int,int>> matches_arestas;
+	std::vector<std::pair<int,int> > matches_arestas;
 	int used;
 } Peca;
 
@@ -59,7 +59,7 @@ int main(){
 	printf("%d\n",maxscore);
 	return 0;
 }
-
+/*
 void play(Peca** tabuleiro, std::vector<Peca>* pecas, int score, int size){
 	for(int i=0; i<jogadas.size(); i++){
 		for(int j=0; j<size; j++){
@@ -67,22 +67,26 @@ void play(Peca** tabuleiro, std::vector<Peca>* pecas, int score, int size){
 				for(int k=0; k<jogadas->at(i).matches.size(); k++){
 					//Peca for igual
 					if(jogadas->at(i).matches->at(k).arestas[0][0] == pecas->at(j).arestas[0][0] && jogadas->at(i).matches->at(k).arestas[1][0] == pecas->at(j).arestas[1][0] && jogadas->at(i).matches->at(k).arestas[2][0] == pecas->at(j).arestas[2][0]){
-						if(jogadas-at(i).orientacao == 0){
-							
+						if(jogadas->at(i).orientacao == 0){
+							if(jogadas->at(i).matches_arestas->first == 0){
+								if(jogadas->at(i).matches_arestas->last == 0){
+
+								}
+							}
 						}
-						if(jogadas-at(i).orientacao == 1){
+						if(jogadas->at(i).orientacao == 1){
 
 						}
-						if(jogadas-at(i).orientacao == 2){
+						if(jogadas->at(i).orientacao == 2){
 
 						}
-						if(jogadas-at(i).orientacao == 3){
+						if(jogadas->at(i).orientacao == 3){
 
 						}
-						if(jogadas-at(i).orientacao == 4){
+						if(jogadas->at(i).orientacao == 4){
 
 						}
-						if(jogadas-at(i).orientacao == 5){
+						if(jogadas->at(i).orientacao == 5){
 
 						}
 					}
@@ -91,34 +95,32 @@ void play(Peca** tabuleiro, std::vector<Peca>* pecas, int score, int size){
 		}
 	}
 }
-
+*/
 void get_matches(std::vector<Peca>* pecas, int x){
 	int pos=x;
 	bool find = false;
+	int yolo = 0;
 	for(int i=0;i<pecas->size();i++){
 		printf("\n");
+		find = false;
 		if(i!=pos){
 			//printf("\n%d\n",pecas->at(i).arestas[0][0]);
 			for(int j=0;j<3;j++){
 				for(int k=0;k<3;k++){
-					find=false;
 					if(pecas->at(pos).arestas[j][0] == pecas->at(i).arestas[k][1] && pecas->at(pos).arestas[j][1] == pecas->at(i).arestas[k][0]){
+						yolo++;
 						if(!find){
 							printf("Atual: [%d, %d, %d]-> Match: [%d, %d, %d]\n", pecas->at(pos).arestas[0][0], pecas->at(pos).arestas[1][0], pecas->at(pos).arestas[2][0], pecas->at(i).arestas[0][0], pecas->at(i).arestas[1][0], pecas->at(i).arestas[2][0]);
 							pecas->at(pos).matches.push_back(pecas->at(i));
 							//GUARDA ARESTAS QUE DÃO MATCH
 							//J = ARESTA PECA ATUAL
 							//K = ARESTA MATCH
-							pecas->at(pos).matches_arestas.push_back(make_pair(j,l));
-							printf("")
 							find = true;
 						}
-						else
-							break;
+							pecas->at(pos).matches_arestas.push_back(std::make_pair(j,k));
+							printf("Aresta peca atual: %d\n",pecas->at(pos).matches_arestas.at(yolo-1).first);
+							printf("Aresta peca match: %d\n",pecas->at(pos).matches_arestas.at(yolo-1).second);
 					}
-				}
-				if(find){
-					break;
 				}
 			}
 		}
