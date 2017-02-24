@@ -12,7 +12,6 @@ typedef struct Peca {
 } peca;
 
 int maxscore = 0;
-int repetidos = 0;
 std::vector<peca> jogadas;
 
 void output(peca* p, int size);
@@ -27,7 +26,6 @@ void check_repeated(peca* pecas, int size);
 void print_puzzle();
 
 int main(void) {
-	//clock_t begin = clock();
 	peca *pecas = (peca*) calloc(20, sizeof(peca));
 	int i = 0;
 		
@@ -42,37 +40,16 @@ int main(void) {
 	}
 
 	for(i=0;i<size;i++) {
-		//pecas[i].coords[0] = size;  
-		//pecas[i].coords[1] = size;
 		set_position(tabuleiro, pecas, size, size, 0, i);
 		jogadas.push_back(pecas[i]);
 		play(tabuleiro, pecas, 0, size);
-		//printf("MAIN = maxscore = %d | jogadas = %lu\n", maxscore, jogadas.size());
 		jogadas.clear();
-		//printf("[i = %d] | Main | Puzzle Size = %lu\n", i, jogadas.size());
 		pecas[i].used = 0;
 	}
 
 	printf("%d\n", maxscore);
-	//clock_t end = clock();
-	//double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
-	//printf("%f\n", time_spent);
-	return 0;
-}
 
-void check_repeated(peca* pecas, int size) {
-	int i = 0, j = 0;
-	for(i=0;i<size;i++){
-		for(j=i+1;j<size-1;j++) {
-			if(pecas[i].arestas[0][0] == pecas[j].arestas[0][0] && \
-			   pecas[i].arestas[1][0] == pecas[j].arestas[1][0] && \
-			   pecas[i].arestas[2][0] == pecas[j].arestas[2][0]) {
-				repetidos = 1;
-				return;
-			}
-		}
-	}
-	return;
+	return 0;
 }
 
 void reset_peca(peca* pecas, int i) {
@@ -98,19 +75,15 @@ int play(peca** tabuleiro, peca* pecas, int score, int size) {
 	unsigned int h=0;
 	int x;
 	int y;
-	for(h=0;h<jogadas.size();h++){
-		if(jogadas.size() == (unsigned int) size) 
-			continue;
-		if(jogadas.at(jogadas.size()-1-h).arestas[0][2] == 1 && jogadas.at(jogadas.size()-1-h).arestas[1][2] == 1 && jogadas.at(jogadas.size()-1-h).arestas[2][2] == 1)
-			continue;
-		//printf("\th = %d\n", h);
-		x = 0;
-		y = 0;
-		//x=jogadas.at(jogadas.size()-1-h).coords[1];
-		//y=jogadas.at(jogadas.size()-1-h).coords[0];
-		for(i=0;i<size;i++) {
-			//printf("\t\ti = %d | used = %d\n", i, pecas[i].used);
-			if(pecas[i].used != 1) {
+	for(i=0;i<size;i++) {
+		if(pecas[i].used != 1) {
+			int flag = 0;
+			x = 0; y = 0;
+			for(h=0;h<jogadas.size();h++){
+				if(jogadas.size() == (unsigned int) size) 
+					continue;
+				if(jogadas.at(jogadas.size()-1-h).arestas[0][2] == 1 && jogadas.at(jogadas.size()-1-h).arestas[1][2] == 1 && jogadas.at(jogadas.size()-1-h).arestas[2][2] == 1)
+					continue;
 				for(k=0;k<3;k++) {
 					if(jogadas.at(jogadas.size()-1-h).arestas[k][2] != 1) {	/* Se aresta não está já ligada */
 						for(l=0;l<3;l++) {
@@ -196,7 +169,6 @@ int play(peca** tabuleiro, peca* pecas, int score, int size) {
 										}
 									}
 								} else if(jogadas.at(jogadas.size()-1-h).orientacao == 3) {
-
 									if(k == 0) { /* Nova peca em baixo */
 										if(l == 0) {
 											set_position(tabuleiro, pecas, x, y+1, 2, i);
@@ -278,26 +250,24 @@ int play(peca** tabuleiro, peca* pecas, int score, int size) {
 								score += pecas[i].arestas[l][0] + pecas[i].arestas[l][1];
 								jogadas.push_back(pecas[i]);
 								//print_board(tabuleiro, size);
-								//printf("-> PLAY | Puzzle size = %lu\n", jogadas.size());
 								//print_puzzle();
 								play(tabuleiro, pecas, score, size);
-								//printf("-> AFTER PLAY\n");
 								if(score > maxscore) {
 									maxscore = score;
-									//printf("maxscore = %d | jogadas = %lu\n", maxscore, jogadas.size());
 								} else if(score <= maxscore/2 && h >= jogadas.size()*0.5) {
 									return 0;
-								}	
+								}
 								jogadas.pop_back();
-								peca p_aux; default_peca(&p_aux);
-								//tabuleiro[pecas[i].coords[0]][pecas[i].coords[1]] = p_aux;
 								reset_peca(pecas, i);
-								//printf("PLAY | Usada = %d\n", pecas[i].used);
 								jogadas.at(jogadas.size()-1-h).arestas[k][2] = 0;
 								score -= (pecas[i].arestas[l][0] + pecas[i].arestas[l][1]);
+								flag = 1;
+								break;
 							}
 						}
 					}
+					if (flag == 1)
+						break;
 				}
 			}
 		}
@@ -326,16 +296,6 @@ void default_peca(peca* p) {
 	p->used = 0;
 	p->coords[0] = -1; p->coords[1] = -1;
 	p->orientacao = 0;
-}
-
-void output(peca* p, int size) {
-	int i;
-	for(i=0;i<size;i++) {
-		printf("[ (%d, %d) (%d, %d) (%d, %d) ]\n",
-			p[i].arestas[0][0], p[i].arestas[0][1],
-			p[i].arestas[1][0], p[i].arestas[1][1],
-			p[i].arestas[2][0], p[i].arestas[2][1]);
-	}
 }
 
 // retorna size = n de pecas
@@ -372,18 +332,6 @@ int input(peca* pecas) {
 	return i;
 }
 
-int ingame(peca** tabuleiro, int size) {
-	int i = 0; int j = 0;
-	int count = 0;
-	for(i=0;i<2*size;i++) {
-		for(j=0;j<2*size;j++) {
-			if(tabuleiro[i][j].used == 1)
-				count++;
-		}
-	}
-	return count;
-}
-
 void print_board(peca** tabuleiro, int size) {
 	int i, j;
 	//int count = ingame(tabuleiro, size);
@@ -397,12 +345,4 @@ void print_board(peca** tabuleiro, int size) {
 		printf("+\n");
 	}
 	printf("+ "); for(j=0;j<2*size;j++) printf("+ + + + "); printf("+ \n\n");
-}
-
-int* reverse_aresta(int aresta[]){
-	int temp;
-	temp = aresta[0];
-	aresta[0] = aresta[1];
-	aresta[1] = temp;
-	return aresta;
 }
