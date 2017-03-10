@@ -4,23 +4,24 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <math.h>
 #include <time.h>
 
 void readInput(){
     int op_number;
     double prob;
     int cost;
-    int success;
+    int budget;
     std::cin >> op_number;
-    std::cout << "Operations number: " << op_number << "\n";
+    //std::cout << "Operations number: " << op_number << "\n";
     std::vector<std::pair<double,int> > machines; 
     for(int i=0; i<op_number; i++){
         std::cin >> prob >> cost;
         machines.push_back(std::make_pair(prob,cost));
-        std::cout << "Probability: " << machines.at(i).first << " " << "Cost: " << machines.at(i).second << "\n";
+        //std::cout << "Probability: " << machines.at(i).first << " " << "Cost: " << machines.at(i).second << "\n";
     }
-    std::cin >> success;
-    std::cout << "Success rate: " << success << "\n";
+    std::cin >> budget;
+    //std::cout << "Budget: " << budget << "\n";
 }
 
 int main(void){
