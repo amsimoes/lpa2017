@@ -28,7 +28,7 @@ void print_puzzle();
 int main(void) {
 	peca *pecas = (peca*) calloc(20, sizeof(peca));
 	int i = 0;
-		
+
 	int size = input(pecas);
 	if (size == 0) {
 		return 1;
