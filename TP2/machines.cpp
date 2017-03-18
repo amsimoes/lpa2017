@@ -29,6 +29,7 @@ int readInput(){
 
 void knapsack(int sections, int budget){  
     double machines_array[sections+1][budget+1];
+    int machines_solution[sections];
     double failure_prob;
     double prob;
     for(int i=0; i<=budget; i++){
@@ -53,6 +54,37 @@ void knapsack(int sections, int budget){
     }
     std::cout.precision(12);
     std::cout << std::fixed << machines_array[sections][budget] << std::endl;
+    double max_prob;
+    max_prob = machines_array[sections][budget]; 
+    int max = budget; 
+    for(int i=sections; i>=0; i--){
+        for(int j=0; j<=max; j++){ 
+            double temp = machines_array[i][j];
+            printf("machines_array:%.12f max:%.12f\n",machines_array[i][j], max_prob);
+            if(fabs(temp - max_prob) < std::numeric_limits<double>::epsilon()){
+                printf("inside if\n");
+                printf("%d\n",machines_cost[i-1]);
+                printf("%d\n",j-machines_cost[i-1]);
+                printf("%.12f\n",machines_array[i-1][j-machines_cost[i-1]]);
+                max_prob = machines_array[i-1][j-machines_cost[i-1]]; 
+                printf("max_prob: %.12f\n",max_prob);
+                max = std::abs(j);  
+                printf("max: %d\n",max);
+                printf("j:%d, machines_cost:%d\n", j, machines_cost[i-1]);
+                machines_solution[i] = j/machines_cost[i-1]; 
+                for(int k=sections; k>=0; k--){
+                    machines_solution[k] /= machines_solution[i];
+                }
+                printf("j: %d, machines_cost[i]:%d, machines_solution[i]:%d\n",j,machines_cost[i],machines_solution[i]);
+                fflush(stdout); 
+                break;
+            } 
+        } 
+        printf("break\n");
+    } 
+    for(int i=0; i<sections; i++){
+        std::cout << machines_solution[i] << std::endl;
+    } 
 }
 
 int main(void){
