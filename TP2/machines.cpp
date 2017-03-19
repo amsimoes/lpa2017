@@ -58,31 +58,39 @@ void knapsack(int sections, int budget){
     max_prob = machines_array[sections][budget]; 
     int max = budget; 
     for(int i=sections; i>=0; i--){
+        if(i==0){
+            machines_solution[i] = max / machines_cost[i];
+            break;
+        }
         for(int j=0; j<=max; j++){ 
             double temp = machines_array[i][j];
-            printf("machines_array:%.12f max:%.12f\n",machines_array[i][j], max_prob);
-            if(fabs(temp - max_prob) < std::numeric_limits<double>::epsilon()){
+            printf("machines: %.12f\n", temp);           
+            printf("max_prob: %.12f\n", max_prob);
+            if(fabs(temp - max_prob) < 0.0000000000000002220446049){ 
                 printf("inside if\n");
-                printf("%d\n",machines_cost[i-1]);
-                printf("%d\n",j-machines_cost[i-1]);
+                printf("i:%d j:%d\n",i,j);                
+                printf("j-machines_cost[i-1]: %d\n",j-machines_cost[i-1]);
                 printf("%.12f\n",machines_array[i-1][j-machines_cost[i-1]]);
-                max_prob = machines_array[i-1][j-machines_cost[i-1]]; 
-                printf("max_prob: %.12f\n",max_prob);
+                max_prob = machines_array[i-1][j]; 
+            
                 max = std::abs(j);  
                 printf("max: %d\n",max);
-                printf("j:%d, machines_cost:%d\n", j, machines_cost[i-1]);
-                machines_solution[i] = j/machines_cost[i-1]; 
-                for(int k=sections; k>=0; k--){
-                    machines_solution[k] /= machines_solution[i];
-                }
-                printf("j: %d, machines_cost[i]:%d, machines_solution[i]:%d\n",j,machines_cost[i],machines_solution[i]);
+             
+                machines_solution[i] = j;
+                printf("j: %d, machines_cost[i]:%d, machines_solution[i]:%d, i: %d\n",j,machines_cost[i],machines_solution[i] , i);
                 fflush(stdout); 
                 break;
             } 
         } 
         printf("break\n");
     } 
-    for(int i=0; i<sections; i++){
+    for(int i=sections-1; i>0; i--){
+        printf("i: %d, i-1: %d\n", i, i-1);
+        machines_solution[i] -= machines_solution[i-1];
+        printf("machines_solution[i] = %d\n", machines_solution[i]);
+    }
+    for(int i=0; i<sections; i++){ 
+        machines_solution[i] /= machines_cost[i];
         std::cout << machines_solution[i] << std::endl;
     } 
 }
