@@ -7,9 +7,9 @@
 #include <math.h>
 #include <time.h>
 
-double machines_prob[400];
-int machines_cost[400];
-int min_costs[400];
+double machines_prob[401];
+int machines_cost[401];
+int min_costs[401];
 int sections;
 int budget;
 int *values;
@@ -56,29 +56,27 @@ void backtrack(int* solution, int section, int max_budget, double matrix_prob[][
     int counter = 0;
     
     //print_matrix(matrix_prob);
-    for(int b=max_budget-machines_cost[section-1]; b>min_cost; b-=machines_cost[section-1]) {
-        if(section == 1){
-          break;
-        }
-        counter++;
-        //printf("b = %d\n", b);
-        //printf("section = %d | max_budget = %d\n", section, max_budget);
-        double prob_atual = matrix_prob[section][max_budget];
-        //printf("prob_atual = %.12f\n", prob_atual);
-        if(section>=-1){
-        double abs = fabs(prob_atual/((1-pow_prob(counter, machines_prob[section-1]))) - matrix_prob[section-1][b]);
-        if(abs < 0.0000000000000002220446049) {
-            solution[section] = counter;
-            backtrack(solution, section-1, b, matrix_prob, min_costs[section]);
-            }
+    if(section!=1) {
+        for(int b=max_budget-machines_cost[section-1]; b>min_cost; b-=machines_cost[section-1]) {
+            counter++;
+            //printf("b = %d\n", b);
+            //printf("section = %d | max_budget = %d\n", section, max_budget);
+            double prob_atual = matrix_prob[section][max_budget];
+            //printf("prob_atual = %.12f\n", prob_atual);
+            double abs = fabs(prob_atual-(matrix_prob[section-1][b]*(1-pow_prob(counter, machines_prob[section-1]))));
+            if(abs < 0.0000000000000002220446049) {
+                solution[section] = counter;
+                backtrack(solution, section-1, b, matrix_prob, min_costs[section]);
+            }    
         }    
     }
+    
     if(section==1) {
         solution[section] = max_budget/machines_cost[section-1];
         for(int i=1; i<sections; i++) {
-            printf("%d ", solution[i]);
+            std::cout << solution[i] << " ";
         }
-        printf("%d\n",solution[sections]);
+        std::cout << solution[sections] << std::endl;
     }
     return;
 }
@@ -87,7 +85,7 @@ void knapsack(){
     double machines_array[401][1001];
     double failure_prob;
     double prob;
-    int solutions[sections];
+    int solutions[401];
 
     for(int i=0; i<=budget; i++){
         machines_array[0][i] = 1;      
