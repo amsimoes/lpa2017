@@ -9,11 +9,12 @@
 
 double machines_prob[400];
 int machines_cost[400];
+int min_costs[400];
 int sections;
 int budget;
 int *values;
 
-int readInput(){ 
+void readInput(){ 
     std::cin >> sections; 
     //std::cout << "Number of sections: " << sections << "\n"; 
     for(int i=0; i<sections; i++){
@@ -22,16 +23,23 @@ int readInput(){
     }
     std::cin >> budget;
     //std::cout << "Budget: " << budget << "\n";
-    return sections;
 }
 
-void print_matrix(double matrix_prob[][401]) {
+void print_matrix(double matrix_prob[][1001]) {
     for(int i=0; i<=sections; i++) {
         for(int j=0; j<=budget; j++) {
             printf("%.12f ", matrix_prob[i][j]);
         }
         printf("\n");
     }
+}
+
+void calc_min_costs(){
+  int sum=0;
+  for (int i = 0; i<sections; i++){
+    sum+=machines_cost[i];
+    min_costs[i] = sum;
+  }
 }
 
 double pow_prob(int num, double prob) {
@@ -44,36 +52,39 @@ double pow_prob(int num, double prob) {
     return prob_final;
 }
 
-void backtrack(int* solution, int section, int max_budget, double matrix_prob[][401]) {
+void backtrack(int* solution, int section, int max_budget, double matrix_prob[][1001], int min_cost) {
     int counter = 0;
+    
     //print_matrix(matrix_prob);
-    for(int b=max_budget-machines_cost[section-1]; b>0; b-=machines_cost[section-1]) {
+    for(int b=max_budget-machines_cost[section-1]; b>min_cost; b-=machines_cost[section-1]) {
+        if(section == 1){
+          break;
+        }
         counter++;
         //printf("b = %d\n", b);
         //printf("section = %d | max_budget = %d\n", section, max_budget);
         double prob_atual = matrix_prob[section][max_budget];
         //printf("prob_atual = %.12f\n", prob_atual);
+        if(section>=-1){
         double abs = fabs(prob_atual/((1-pow_prob(counter, machines_prob[section-1]))) - matrix_prob[section-1][b]);
-        //printf("fabs = %.12f\n", abs);
         if(abs < 0.0000000000000002220446049) {
             solution[section] = counter;
-            if(section!=0) {
-                //printf("section = %d\n", section);
-                backtrack(solution, section-1, b, matrix_prob);
-            } 
+            backtrack(solution, section-1, b, matrix_prob, min_costs[section]);
+            }
         }    
     }
     if(section==1) {
-        for(int i=1; i<=sections; i++) {
+        solution[section] = max_budget/machines_cost[section-1];
+        for(int i=1; i<sections; i++) {
             printf("%d ", solution[i]);
         }
-        printf("\n");
+        printf("%d\n",solution[sections]);
     }
     return;
 }
 
 void knapsack(){  
-    double machines_array[401][401];
+    double machines_array[401][1001];
     double failure_prob;
     double prob;
     int solutions[sections];
@@ -103,7 +114,7 @@ void knapsack(){
 
     for(int i=budget; i>0; i--){
         if(machines_array[sections][i] < machines_array[sections][budget]){
-            backtrack(solutions, sections, i+1, machines_array);
+            backtrack(solutions, sections, i+1, machines_array, min_costs[sections]);
             break;
         }
     }
@@ -111,9 +122,7 @@ void knapsack(){
 
 int main(void){
     std::ios::sync_with_stdio(false);
-    int sections;
-    sections = readInput();
+    readInput();
     knapsack();
-    std::vector<std::pair<int, double> > machines_prob(sections, std::make_pair(0,0));
     return 0;
 }
