@@ -9,7 +9,8 @@
 #include <limits>
 #include <time.h>
 
-double best = std::numeric_limits<double>::infinity();
+//double best = std::numeric_limits<double>::infinity();
+double best = 100000;
 int visited = 0;
 
 void input(int &n_places, int** &places) {
@@ -37,8 +38,7 @@ void shortPath(int index, double distance, int n_places, int** places) {
 		if(places[i][2] == 0) {
 			places[i][2] = 1;
 			visited++;
-			double cenas = distance + sqrt(pow(places[i][0] - places[index][0], 2)+\
-											pow(places[i][1] - places[index][1], 2));
+			double cenas = distance + sqrt((places[i][0] - places[index][0])*(places[i][0] - places[index][0])+(places[i][1] - places[index][1])*(places[i][1] - places[index][1]));
 			if(cenas < best)
 				shortPath(i, cenas, n_places, places);
 			places[i][2] = 0;
