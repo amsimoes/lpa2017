@@ -148,9 +148,9 @@ int test_constraints(int array[45]) {
 	int sum = 0;
 	
 	//printf("estou a testar constraints lul\n");
-	for(int i = 0; i< constraints_count-1; i++) { // passar por todas as constraints
+	for(int i = 0; i < constraints_count-1; i++) { // passar por todas as constraints
 		sum = 0; 
-		for(int j = 0; j<45; j++) { //passar por todos os x numa constraint
+		for(int j = 0; j < 45; j++) { //passar por todos os x numa constraint
 			sum += constraints[i][j] * array[j];
 			//printf("sum = %d para a constraint %d, testar o x%d\n", sum, i,j);
 		
@@ -169,7 +169,7 @@ int test_constraints(int array[45]) {
 
 int calc_expression(int array[45], int variable_change[45]) {
 	int result = 0; 
-	for(int i = 0; i< 45; i++) {
+	for(int i = 0; i < 45; i++) {
 		result += (array[i] * constants[i] * variable_change[i]);
 		// printf("result = %d,  array[%d] = %d, constants[%d] = %d, variable_change[%d] = %d\n", result, i, array[i], i, constants[i], i, variable_change[i]);
 	}
@@ -228,7 +228,7 @@ void parse_equation() {
 				positive = 0;
 			}
 		} else if(scan == 's') {
-			if((scan = getchar())=='t') {
+			if((scan = getchar()) == 't') {
 				//max_x = get_constraints();
 				get_constraints();
 			}
@@ -248,31 +248,31 @@ void algorithm(int max_or_min) {
 	int bound = -99999;
 	//printf("%d %d\n", max_or_min, constraints_count);
 	
-	for(int i = 0; i< 45; i++) {
+	for(int i = 0; i < 45; i++) {
 		variable_change[i] = 1;
 		xs[i] = 0;
 	}
 
 	if(max_or_min == -1) {
 		//ainda temos que garantir que na expressao inicial, todos os valores sao negativos, nos xs quando uma cena na expressão é >0 temos de fazer xi' = 1-xi
-		for(int i =0; i<45; i++) {
-			if(xs_in_eq[i] >0){
+		for(int i =0; i < 45; i++) {
+			if(xs_in_eq[i] > 0){
 				variable_change[i] = -1; // mudanca de variavel, nao esquecer depois de verificar no fim do algoritmo. Estes so podem ser -1 ou 0.
 			}
-			xs_in_eq[i] *=-1;
+			xs_in_eq[i] *= -1;
 		}
 	}
 
-	for(int i=0; i<constraints_count-2; i++) {
+	for(int i=0; i < constraints_count-2; i++) {
 		if(constraints[i][45] == 1) {
 			//printf("constraints[%d][0] = %d \n", i,constraints[i][0]);
-			for(int j=0; j< 47; j++) {
+			for(int j=0; j < 47; j++) {
 				constraints[i][j] *= -1;
 				//cout << "if >= " << i << " " << j << " =" << constraints[i][j] << endl;
 			}
-		} else if(constraints[i][45]==0) {
+		} else if(constraints[i][45] == 0) {
 			constraints[i][45] = 1;
-			for(int j=0; j<47; j++) {
+			for(int j=0; j < 47; j++) {
 				constraints[constraints_count][j] = constraints[i][j]*(-1);
 				//cout << "nova constraint do =, posicao no array: " << constraints_count-1 << " " << j << " =" << constraints[constraints_count-1][j] << endl;
 			}
@@ -280,13 +280,13 @@ void algorithm(int max_or_min) {
 		}
 	}
 
-	for(int i = 0; i<45; i++) {
+	for(int i = 0; i < 45; i++) {
 		//meter todas as combinacoes de 0 e 1 possiveis nas variaveis.
 		//comecar com x1 a 0, ver se passa nos 3 testes. se nao, meter o x1 a 1 e ver se passa nos testes. se passar fazer x1 1 e x2 0, testar, etc etc
 		xs[i] = 0;
 		if(test_constraints(xs) == 0) {// se xi = 0 nao passar nas constraints
 			xs[i] = 1;
-			if(test_constraints(xs)==0) { // se xi = 1 nao passar nas constraints
+			if(test_constraints(xs) == 0) { // se xi = 1 nao passar nas constraints
 				//printf("entrei aqui blyat 1\n");
 				//printf("xs[%d]\n", i);
 				printf("INFEASIBLE\n");
@@ -343,6 +343,7 @@ void algorithm(int max_or_min) {
 int main() {
 	ios::sync_with_stdio(false);
 	char* line = (char*)malloc(50*sizeof(char));
+
 	while(scanf("%s\n",line) >= 1) {
 		if(!strcmp("maximize",line)){
 			//printf("dentro do maximize na main o mano \n");
