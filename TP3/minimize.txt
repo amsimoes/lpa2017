@@ -1,10 +1,3 @@
-maximize
--62x1+35x3-97x2
-st
-25x9-57x3+76x4=4
--45x3-11x2+23x1<=57
-BINARY
-
 minimize
 84x3-64x6-98x4-70x2+77x9
 st

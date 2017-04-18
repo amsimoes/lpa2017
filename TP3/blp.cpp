@@ -50,7 +50,7 @@ void get_constraints(){
 			} else {
 				n = atoi(number.c_str());
 			}
-			constraints[constraints_count-1][x-1] = n;
+			constraints[constraints_count][x-1] = n;
 
 			if(scan == '+') {
 				number = "";
@@ -74,8 +74,9 @@ void get_constraints(){
 					constraint_number += scan;
 					scan = getchar();
 			}
-			constraints[constraints_count-1][46] = atoi(constraint_number.c_str());
-			constraints[constraints_count-1][45] = 0;
+			constraints[constraints_count][46] = atoi(constraint_number.c_str());
+			constraints[constraints_count][45] = 0;
+			constraint_number = "";
 			
 			number = "";
 			x_count_c = 0;
@@ -91,9 +92,10 @@ void get_constraints(){
 					constraint_number += scan;
 					scan = getchar();
 				}
-				constraints[constraints_count-1][46] = atoi(constraint_number.c_str());
-				constraints[constraints_count-1][45] = -1;
-				
+				constraints[constraints_count][46] = atoi(constraint_number.c_str());
+				constraints[constraints_count][45] = -1;
+				constraint_number = "";
+
 				//reset
 				number = "";
 				x_count_c = 0;
@@ -110,8 +112,9 @@ void get_constraints(){
 					constraint_number += scan;
 					scan = getchar();
 				}
-				constraints[constraints_count-1][46] = atoi(constraint_number.c_str());
-				constraints[constraints_count-1][45] = 1;
+				constraints[constraints_count][46] = atoi(constraint_number.c_str());
+				constraints[constraints_count][45] = 1;
+				constraint_number = "";
 				
 				//reset
 				number = "";
@@ -228,8 +231,7 @@ void parse_equation() {
 			}
 		} else if(scan == 's') {
 			char line_st[3];
-			if(scanf("%s\n", line_st) >= 1) {
-				//max_x = get_constraints();
+			if(scanf("%s\n", line_st) == 1) {
 				get_constraints();
 			}
 			return;
@@ -241,14 +243,11 @@ void parse_equation() {
 }
 
 void algorithm(int max_or_min) {
-	printf("CONSTRAINTS COUNT = %d\n", constraints_count);
-
 	int xs[45];
 	int variable_change[45];
-	//int sign;
-	//int val;
+
 	int bound = -99999;
-	//printf("%d %d\n", max_or_min, constraints_count);
+
 	
 	for(int i = 0; i < 45; i++) {
 		variable_change[i] = 1;
@@ -265,7 +264,9 @@ void algorithm(int max_or_min) {
 		}
 	}
 
-	for(int i=0; i < constraints_count; i++) {
+	//printf("CONSTRAINTS COUNT = %d\n", constraints_count);
+	int aux = constraints_count;
+	for(int i=0; i < aux; i++) {
 		if(constraints[i][45] == 1) {
 			//printf("constraints[%d][0] = %d \n", i,constraints[i][0]);
 			for(int j=0; j < 47; j++) {
@@ -275,14 +276,17 @@ void algorithm(int max_or_min) {
 		} else if(constraints[i][45] == 0) {
 			constraints[i][45] = -1;
 			for(int j=0; j < 47; j++) {
-				constraints[constraints_count][j] = constraints[i][j]*(-1);
+				if (j != 45) {
+					constraints[constraints_count][j] = constraints[i][j]*(-1);
+				}
 				//cout << "nova constraint do =, posicao no array: " << constraints_count-1 << " " << j << " =" << constraints[constraints_count-1][j] << endl;
 			}
-			constraints_count++;
+			constraints[constraints_count][45] = -1;
+			constraints_count++;	
 		}
 	}
 
-	printf("AFTER - CONSTRAINTS COUNT = %d\n", constraints_count);
+	//printf("AFTER - CONSTRAINTS COUNT = %d\n", constraints_count);
 
 	/*for(int i = 0; i < constraints_count; i++) {
 		for(int j = 0; j < 47; j++) {
@@ -356,13 +360,19 @@ void algorithm(int max_or_min) {
 
 
 int main() {
-	clock_t begin = clock();
+	//clock_t begin = clock();
 	ios::sync_with_stdio(false);
 	char* line = (char*)malloc(50*sizeof(char));
 
+	constraints_count = 0;
 	while(scanf("%s\n",line) >= 1) {
 		if(!strcmp("maximize",line)){
 			//printf("dentro do maximize na main o mano \n");
+			for(int i=0; i<constraints_count; i++) {
+				for(int j=0; j<47; j++) {
+					constraints[i][j] = 0;
+				}
+			}
 			constraints_count = 0;
 			//cout << "maximize" << endl;
 			//int max_x = parse_equation();
@@ -371,6 +381,11 @@ int main() {
 			//printf("INFEASIBLE\n");
 		} else if(!strcmp("minimize",line)) {
 			//printf("dentro do minimize na main o mano \n");
+			for(int i=0; i<constraints_count; i++) {
+				for(int j=0; j<47; j++) {
+					constraints[i][j] = 0;
+				}
+			}
 			constraints_count = 0;
 			//cout << "minimize" << endl;
 			////int max_x = parse_equation();
@@ -383,10 +398,10 @@ int main() {
 		line = (char*)malloc(50*sizeof(char));
 	}
 
-	clock_t end = clock();
-	double time_spent = (double) (end - begin) / CLOCKS_PER_SEC;
+	//clock_t end = clock();
+	//double time_spent = (double) (end - begin) / CLOCKS_PER_SEC;
 
-	printf("\nexecution time = %f\n", time_spent);
+	//printf("\nexecution time = %f\n", time_spent);
 
 	return 0;
 }
