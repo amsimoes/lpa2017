@@ -169,11 +169,10 @@ int test_constraints(int array[45]) {
 	return 1;
 }
 
-int calc_expression(int array[45], int variable_change[45]) {
+int calc_expression(int xarray[45]) {
 	int result = 0; 
 	for(int i = 0; i < 45; i++) {
-		result += (array[i] * constants[i] * variable_change[i]);
-		// printf("result = %d,  array[%d] = %d, constants[%d] = %d, variable_change[%d] = %d\n", result, i, array[i], i, constants[i], i, variable_change[i]);
+		result += (xarray[i] * constants[i]);
 	}
 	return result;
 }
@@ -242,62 +241,8 @@ void parse_equation() {
 	//return max_x;
 }
 
-void algorithm(int max_or_min) {
-	int xs[45];
-	int variable_change[45];
-
+int branch_and_blyat(int xarray[45], int variable_change[45]) {
 	int bound = -99999;
-
-	
-	for(int i = 0; i < 45; i++) {
-		variable_change[i] = 1;
-		xs[i] = 0;
-	}
-
-	if(max_or_min == -1) {
-		//ainda temos que garantir que na expressao inicial, todos os valores sao negativos, nos xs quando uma cena na expressão é >0 temos de fazer xi' = 1-xi
-		for(int i =0; i < 45; i++) {
-			if(xs_in_eq[i] > 0){
-				variable_change[i] = -1; // mudanca de variavel, nao esquecer depois de verificar no fim do algoritmo. Estes so podem ser -1 ou 0.
-			}
-			xs_in_eq[i] *= -1;
-		}
-	}
-
-	//printf("CONSTRAINTS COUNT = %d\n", constraints_count);
-	int aux = constraints_count;
-	for(int i=0; i < aux; i++) {
-		if(constraints[i][45] == 1) {
-			//printf("constraints[%d][0] = %d \n", i,constraints[i][0]);
-			for(int j=0; j < 47; j++) {
-				constraints[i][j] *= -1;
-				//cout << "if >= " << i << " " << j << " =" << constraints[i][j] << endl;
-			}
-		} else if(constraints[i][45] == 0) {
-			constraints[i][45] = -1;
-			for(int j=0; j < 47; j++) {
-				if (j != 45) {
-					constraints[constraints_count][j] = constraints[i][j]*(-1);
-				}
-				//cout << "nova constraint do =, posicao no array: " << constraints_count-1 << " " << j << " =" << constraints[constraints_count-1][j] << endl;
-			}
-			constraints[constraints_count][45] = -1;
-			constraints_count++;	
-		}
-	}
-
-	//printf("AFTER - CONSTRAINTS COUNT = %d\n", constraints_count);
-
-	/*for(int i = 0; i < constraints_count; i++) {
-		for(int j = 0; j < 47; j++) {
-			printf("constraints[%d][%d] = %d\n", i, j, constraints[i][j]);
-		}
-	}
-
-	for(int k = 0; k < 45; k++) {
-		printf("variable_change[%d] = %d\n", k, variable_change[k]);
-	}*/
-
 
 	for(int i = 0; i < 45; i++) {
 		//meter todas as combinacoes de 0 e 1 possiveis nas variaveis.
@@ -358,6 +303,67 @@ void algorithm(int max_or_min) {
 		printf("INFEASIBLE\n");
 }
 
+void algorithm(int max_or_min) {
+	int xs[45];
+	int variable_change[45];
+
+	for(int i = 0; i < 45; i++) {
+		variable_change[i] = 1;
+		xs[i] = 0;
+		if(constants[i] > 0)
+			constants[i] *= -1;
+	}
+
+	if(max_or_min == -1) {
+		//ainda temos que garantir que na expressao inicial, todos os valores sao negativos, nos xs quando uma cena na expressão é >0 temos de fazer xi' = 1-xi
+		for(int i =0; i < 45; i++) {
+			if(xs_in_eq[i] > 0){
+				variable_change[i] = -1; // mudanca de variavel, nao esquecer depois de verificar no fim do algoritmo. Estes so podem ser -1 ou 0.
+			}
+			xs_in_eq[i] *= -1;
+		}
+	}
+
+	//printf("CONSTRAINTS COUNT = %d\n", constraints_count);
+	int aux = constraints_count;
+	for(int i=0; i < aux; i++) {
+		if(constraints[i][45] == 1) {
+			//printf("constraints[%d][0] = %d \n", i,constraints[i][0]);
+			for(int j=0; j < 47; j++) {
+				constraints[i][j] *= -1;
+				//cout << "if >= " << i << " " << j << " =" << constraints[i][j] << endl;
+			}
+		} else if(constraints[i][45] == 0) {
+			constraints[i][45] = -1;
+			for(int j=0; j < 47; j++) {
+				if (j != 45) {
+					constraints[constraints_count][j] = constraints[i][j]*(-1);
+				}
+				//cout << "nova constraint do =, posicao no array: " << constraints_count-1 << " " << j << " =" << constraints[constraints_count-1][j] << endl;
+			}
+			constraints[constraints_count][45] = -1;
+			constraints_count++;	
+		}
+	}
+
+	printf("AFTER - CONSTRAINTS COUNT = %d\n", constraints_count);
+
+	for(int i = 0; i < constraints_count; i++) {
+		for(int j = 0; j < 47; j++) {
+			printf("constraints[%d][%d] = %d\n", i, j, constraints[i][j]);
+		}
+	}
+
+	for(int k = 0; k < 45; k++) {
+		printf("variable_change[%d] = %d\n", k, variable_change[k]);
+	}
+
+	//branch_and_blyat(xs_in_eq, variable_change);
+
+	for(int i = 0; i < 45; i++) 
+		printf("constants[%d] = %d\n", i, constants[i]);
+}
+
 
 int main() {
 	//clock_t begin = clock();
@@ -367,31 +373,23 @@ int main() {
 	constraints_count = 0;
 	while(scanf("%s\n",line) >= 1) {
 		if(!strcmp("maximize",line)){
-			//printf("dentro do maximize na main o mano \n");
 			for(int i=0; i<constraints_count; i++) {
 				for(int j=0; j<47; j++) {
 					constraints[i][j] = 0;
 				}
 			}
 			constraints_count = 0;
-			//cout << "maximize" << endl;
-			//int max_x = parse_equation();
 			parse_equation();
 			algorithm(1);
-			//printf("INFEASIBLE\n");
 		} else if(!strcmp("minimize",line)) {
-			//printf("dentro do minimize na main o mano \n");
 			for(int i=0; i<constraints_count; i++) {
 				for(int j=0; j<47; j++) {
 					constraints[i][j] = 0;
 				}
 			}
 			constraints_count = 0;
-			//cout << "minimize" << endl;
-			////int max_x = parse_equation();
 			parse_equation();
 			algorithm(-1);
-			//printf("INFEASIBLE\n");
 		}
 
 		free(line);
