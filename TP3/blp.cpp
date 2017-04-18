@@ -147,7 +147,7 @@ int test_constraints(int array[45]) {
 	int sum = 0;
 	
 	//printf("estou a testar constraints lul\n");
-	for(int i = 0; i < constraints_count-1; i++) { // passar por todas as constraints
+	for(int i = 0; i <= constraints_count-1; i++) { // passar por todas as constraints
 		sum = 0; 
 		for(int j = 0; j < 45; j++) { //passar por todos os x numa constraint
 			sum += constraints[i][j] * array[j];
@@ -227,7 +227,8 @@ void parse_equation() {
 				positive = 0;
 			}
 		} else if(scan == 's') {
-			if((scan = getchar()) == 't') {
+			char line_st[3];
+			if(scanf("%s\n", line_st) >= 1) {
 				//max_x = get_constraints();
 				get_constraints();
 			}
@@ -240,6 +241,8 @@ void parse_equation() {
 }
 
 void algorithm(int max_or_min) {
+	printf("CONSTRAINTS COUNT = %d\n", constraints_count);
+
 	int xs[45];
 	int variable_change[45];
 	//int sign;
@@ -262,7 +265,7 @@ void algorithm(int max_or_min) {
 		}
 	}
 
-	for(int i=0; i < constraints_count-2; i++) {
+	for(int i=0; i < constraints_count; i++) {
 		if(constraints[i][45] == 1) {
 			//printf("constraints[%d][0] = %d \n", i,constraints[i][0]);
 			for(int j=0; j < 47; j++) {
@@ -270,7 +273,7 @@ void algorithm(int max_or_min) {
 				//cout << "if >= " << i << " " << j << " =" << constraints[i][j] << endl;
 			}
 		} else if(constraints[i][45] == 0) {
-			constraints[i][45] = 1;
+			constraints[i][45] = -1;
 			for(int j=0; j < 47; j++) {
 				constraints[constraints_count][j] = constraints[i][j]*(-1);
 				//cout << "nova constraint do =, posicao no array: " << constraints_count-1 << " " << j << " =" << constraints[constraints_count-1][j] << endl;
@@ -278,6 +281,19 @@ void algorithm(int max_or_min) {
 			constraints_count++;
 		}
 	}
+
+	printf("AFTER - CONSTRAINTS COUNT = %d\n", constraints_count);
+
+	/*for(int i = 0; i < constraints_count; i++) {
+		for(int j = 0; j < 47; j++) {
+			printf("constraints[%d][%d] = %d\n", i, j, constraints[i][j]);
+		}
+	}
+
+	for(int k = 0; k < 45; k++) {
+		printf("variable_change[%d] = %d\n", k, variable_change[k]);
+	}*/
+
 
 	for(int i = 0; i < 45; i++) {
 		//meter todas as combinacoes de 0 e 1 possiveis nas variaveis.
@@ -370,7 +386,7 @@ int main() {
 	clock_t end = clock();
 	double time_spent = (double) (end - begin) / CLOCKS_PER_SEC;
 
-	printf("execution time = %f\n", time_spent);
+	printf("\nexecution time = %f\n", time_spent);
 
 	return 0;
 }
