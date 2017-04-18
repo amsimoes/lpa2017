@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <string>
 #include <cstring>
+#include <time.h>
 
 using namespace std;
 
@@ -13,8 +14,7 @@ int constraints[1000][47];
 int constraints_count;
 int x_count;
 
-void get_constraints(){
-//parse
+void get_constraints(){ 
 	char scan;
 	int max_x;
 	string number = "";
@@ -142,7 +142,6 @@ void get_constraints(){
 	}
 	//return max_x;
 }
-
 
 int test_constraints(int array[45]) {
 	int sum = 0;
@@ -341,6 +340,7 @@ void algorithm(int max_or_min) {
 
 
 int main() {
+	clock_t begin = clock();
 	ios::sync_with_stdio(false);
 	char* line = (char*)malloc(50*sizeof(char));
 
@@ -362,8 +362,15 @@ int main() {
 			algorithm(-1);
 			//printf("INFEASIBLE\n");
 		}
+
 		free(line);
 		line = (char*)malloc(50*sizeof(char));
 	}
+
+	clock_t end = clock();
+	double time_spent = (double) (end - begin) / CLOCKS_PER_SEC;
+
+	printf("execution time = %f\n", time_spent);
+
 	return 0;
 }
