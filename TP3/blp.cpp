@@ -353,7 +353,7 @@ int main() {
 			parse_equation();
 			algorithm(1);
 			//printf("INFEASIBLE\n");
-		} else if(strcmp("minimize",line) == 0) {
+		} else if(!strcmp("minimize",line)) {
 			//printf("dentro do minimize na main o mano \n");
 			constraints_count = 0;
 			//cout << "minimize" << endl;

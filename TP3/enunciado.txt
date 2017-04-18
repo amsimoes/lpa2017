@@ -12,3 +12,9 @@ st
 56x1-9x6+34x5+75x2-76x3>=25
 x6<=0
 BINARY
+
+maximize
+x1
+st
+x1<=1
+BINARY
