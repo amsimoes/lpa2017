@@ -16,10 +16,12 @@ int best;
 int constraints_count;
 int l_bound = -99999;
 int x_count;
+int infeasible;
+int max_x;
+int x_test[45];
 
 void get_constraints(){ 
 	char scan;
-	int max_x;
 	string number = "";
 	int x_count_c = 0;
 	int positive = 1;
@@ -149,52 +151,38 @@ void get_constraints(){
 	//return max_x;
 }
 
-void print_used_xs(int xarray[45]) {
-	for(int i = 0; i < 45; i++) {
-		printf("xarray[%d] = %d | constants[%d] = %d\n", i, xarray[i], i, constants[i]);
-	}
-}
-
-int test_constraints(int xarray[45]) {
-	int sum = 0;
-	
-	printf("## TEST CONTRAINTS ##\n");
-	print_used_xs(xarray);
-
-	for(int i = 0; i <= constraints_count-1; i++) { // passar por todas as constraints
+int test_constraints() {
+	int sum;
+	for(int i = 0; i < constraints_count; i++) { // passar por todas as constraints
 		sum = 0; 
-		for(int j = 0; j < 45; j++) { //passar por todos os x numa constraint
-			if(xarray[j] == 1) {
-				sum += constraints[i][j] * xarray[j];
-
-				printf("sum = %d | constraints[%d][46] = %d\n", sum, i, constraints[i][46]);
-
-				if(sum > constraints[i][46]) {
-					return 0;
-				}
-			}
+		for(int j = 0; j < max_x; j++) { //passar por todos os x numa constraint
+			//printf("x_test[%d]: %d\n",j,x_test[j]);
+			if(constraints[i][j] != 0)
+				sum += constraints[i][j] * x_test[j];
 		}
-	}
+		/*printf("sum = %d on constraint %d\n", sum, i);
+		if(constraints[i][45] == -1)
+			printf("<= %d\n",constraints[i][46]);
+		if(constraints[i][45] == 1)
+			printf(">= %d\n",constraints[i][46]);
+		if(constraints[i][45] == 0)
+			printf("= %d\n",constraints[i][46]);
+		*/
+		if(sum < constraints[i][46] && constraints[i][45] == 1){
+			//printf("entrei aqui <\n");
+			return 0;
+		}
+		else if(sum > constraints[i][46] && constraints[i][45] == -1){
+			//printf("entrei aqui >\n");
+			return 0;
+		}
+		else if(sum != constraints[i][46] && constraints[i][45] == 0){
+			//printf("entrei aqui !=\n");
+			return 0;
+		}
 
+	}
 	return 1;
-}
-
-int calc_expression(int array[45]) {
-	int result = 0; 
-	for(int i = 0; i < 45; i++) {
-		result += (array[i] * constants[i]);
-		//printf("result = %d, array[%d] = %d, constants[%d] = %d\n", result, i, array[i], i, constants[i]);
-	}
-	return result;
-}
-
-int calc_expression2(int array[45], int variable_change[45]) {
-	int result = 0; 
-	for(int i = 0; i < 45; i++) {
-		result += ((array[i] - variable_change[i]) * constants[i]);
-		// printf("result = %d,  array[%d] = %d, constants[%d] = %d, variable_change[%d] = %d\n", result, i, array[i], i, constants[i], i, variable_change[i]);
-	}
-	return result;
 }
 
 void parse_equation() {
@@ -228,6 +216,8 @@ void parse_equation() {
 			}
 
 			x = atoi(x_number.c_str());
+			if(x > max_x)
+				max_x = x;
 			xs_in_eq[x_count-1] = x-1;
 			int n;
 
@@ -261,124 +251,116 @@ void parse_equation() {
 	//return max_x;
 }
 
-void print_expression() {
-	for(int i = 0; i < 47; i++) {
-		printf("constants[%d] = %d\n", i, constants[i]);
+
+int calc_expression() {
+	int result = 0; 
+	for(int i = 0; i < max_x; i++) {
+		if(constants[i] != 0)
+			result += (x_test[i] * constants[i]);
+		//printf("result = %d, array[%d] = %d, constants[%d] = %d\n", result, i, x_test[i], i, constants[i]);
 	}
+	return result;
 }
 
-/*void print_constraints() {
-	for(int i = 0; i < 47; i++) {
-		printf("constraints[%d] = %d\n", i, constraints[i]);
-	}	
-}*/
-
-void print_xbest() {
-	for(int i = 0; i < 45; i++) {
-		printf("xbest[%d] = %d\n", i, x_best[i]);
+void branch_and_bound(int x_index, int max_or_min){
+	if(x_index > max_x)
+		return;
+	bool valid = false;
+	/*for(int i=0; i<45; i++){
+		//printf("x_test[%d] = %d\n", i, x_test[i]);
+	}*/
+	for(int i=0; i<constraints_count; i++){
+		if(constraints[i][x_index] != 0)
+			valid = true;
 	}
-}
-
-void zero_array(int xarray[45]) {
-	printf("ZERAR ARRAY\n");
-	for(int i = 0; i < 45; i++)
-		xarray[i] = 0;
-}
-
-void branch_and_blyat(int xarray[45], int variable_change[45], int upper_bound, int x_index) {
-	int intermediate = 0;
-
-	//meter todas as combinacoes de 0 e 1 possiveis nas variaveis.
-	//comecar com x1 a 0, ver se passa nos 3 testes. se nao, meter o x1 a 1 e ver se passa nos testes. se passar fazer x1 1 e x2 0, testar, etc etc
-	
-	xarray[x_index] = 1;
-
-	if(test_constraints(xarray) == 1) { // se passar nas constraints com xindex = 1
-		intermediate = calc_expression(xarray);
-
-		if(intermediate < l_bound) { // se o valor for menor que o lower bound, é impossível conseguir melhor, chama se o nivel a seguir
-			printf("Intermediate = %d < l_bound = %d\n", intermediate, l_bound);
-		} else if(intermediate > l_bound) {
-			printf("Intermediate = %d > l_bound = %d\n", intermediate, l_bound);
-			memcpy(x_best, xarray, sizeof(x_best));
-
-			l_bound = intermediate;
-			printf("LOWER BOUND = %d\n", l_bound);
-
-		}
-
-		xarray[x_index] = 0;
-		//zero_array(xarray);
-		branch_and_blyat(xarray, variable_change, upper_bound, x_index+1);
-	} else {
-		if(x_index <= 44) {
-			printf("Nao passa nas constraints -> A chamar branch_and_blyat...\n");
-			print_used_xs(xarray);
-			branch_and_blyat(xarray, variable_change, upper_bound, x_index+1);
-			//return;
+	if(!valid && constants[x_index] == 0){
+		//printf("dentro do invalid with x_test[%d+1] = 0\n",x_index);
+		if(x_index != 43){
+			x_test[x_index+2] = 1;
+			branch_and_bound(x_index+1, max_or_min);
+			x_test[x_index+1] = 1;
+			x_test[x_index+2] = 0;
+			//printf("dentro do invalid with x_test[%d+1] = 1\n",x_index);
+			branch_and_bound(x_index+1, max_or_min);
+			x_test[x_index+1] = 0;
+			return;
 		}
 	}
-
-	//xarray[x_index] = 0;
-	//print_used_xs(xarray);
-	return;
+	//printf("x_test[%d]: %d\n",x_index, x_test[x_index]);
+	if(test_constraints() == 1){ // Se passar nas constraints´
+		infeasible = 0;
+		int val = calc_expression();
+		//printf("val: %d\n",val);
+		if(max_or_min == 1){ // Maximizar
+			int aux = val;
+			for(int i=x_index; i<45; i++){ // Verificar
+				if(constants[i] > 0){
+					aux += constants[i];
+				}
+			}
+			if(aux < best)
+				return;
+			if(val > best){
+				best = val;
+			}
+		}
+		else if(max_or_min == -1){ // Minimizar
+			int aux = val;
+			for(int i=x_index; i<45; i++){
+				if(constants[i] < 0){
+					aux += constants[i];
+				}
+			}
+			if(aux > best)
+				return;
+			if(val < best){
+				best = val;
+			}
+		}
+		if(x_index != 43){
+			//printf("se passar nas constraints e x_index != 43 with x_test[%d+1] = 0\n",x_index);
+			x_test[x_index+2] = 1;
+			branch_and_bound(x_index+1, max_or_min);
+			x_test[x_index+1] = 1;
+			x_test[x_index+2] = 0;
+			//printf("se passar nas constraints e x_index != 43 with x_test[%d+1] = 1\n",x_index);
+			branch_and_bound(x_index+1, max_or_min);
+			x_test[x_index+1] = 0;
+			return;
+		}
+	}
+	else{ // Se não passar nas constraints
+		if(x_index != 43){
+			//printf("call for branch_and_bound with x_test[%d+1] = 0\n",x_index);
+			x_test[x_index+2] = 1;
+			branch_and_bound(x_index+1, max_or_min);
+			x_test[x_index+1] = 1;
+			x_test[x_index+2] = 0;
+			//printf("call for branch_and_bound with x_test[%d+1] = 1\n",x_index);
+			branch_and_bound(x_index+1, max_or_min);
+			x_test[x_index+1] = 0;
+			return;
+		}
+	}
 }
 
 void algorithm(int max_or_min) {
-	int xs[45];
-	int variable_change[45];
-	int upper_bound = 0;
-
-	for(int i = 0; i < 45; i++) {
-		variable_change[i] = 0;
-		xs[i] = 0;
-		if(constants[i] > 0)
-			constants[i] *= -1;
-	}
-
-	if(max_or_min == -1) {
-		//ainda temos que garantir que na expressao inicial, todos os valores sao negativos, nos xs quando uma cena na expressão é >0 temos de fazer xi' = 1-xi
-		for(int i =0; i < 45; i++) {
-			if(constants[i] > 0){
-				variable_change[i] = 1; // mudanca de variavel, nao esquecer depois de verificar no fim do algoritmo. Estes so podem ser -1 ou 0.
-			}
-			constants[i] *= -1;
-		}
-	}
-
-	int aux = constraints_count;
-	for(int i=0; i < aux; i++) {
-		if(constraints[i][45] == 1) {
-			for(int j=0; j < 47; j++) {
-				constraints[i][j] *= -1;
-			}
-		} else if(constraints[i][45] == 0) {
-			constraints[i][45] = -1;
-			for(int j=0; j < 47; j++) {
-				if (j != 45) {
-					constraints[constraints_count][j] = constraints[i][j]*(-1);
-				}
-			}
-			constraints[constraints_count][45] = -1;
-			constraints_count++;	
-		}
-	}
-
-	//print_expression();
-
-	branch_and_blyat(xs, variable_change, upper_bound, 0);
-
-	if(l_bound == -99999) {
+	best = 0;
+	infeasible = 1;
+	x_test[1] = 1;
+	branch_and_bound(0, max_or_min);
+	x_test[0] = 1;
+	x_test[1] = 0;
+	branch_and_bound(0, max_or_min);
+	if(infeasible)
 		printf("INFEASIBLE\n");
-	} else {
-		int res = calc_expression2(x_best, variable_change);
-		printf("%d\n", res);
-	}
+	else
+		printf("%d\n",best);
 }
 
 
 int main() {
-	clock_t begin = clock();
+	//clock_t begin = clock();
 	ios::sync_with_stdio(false);
 	char* line = (char*)malloc(50*sizeof(char));
 
@@ -408,10 +390,10 @@ int main() {
 		line = (char*)malloc(50*sizeof(char));
 	}
 
-	clock_t end = clock();
-	double time_spent = (double) (end - begin) / CLOCKS_PER_SEC;
+	//clock_t end = clock();
+	//double time_spent = (double) (end - begin) / CLOCKS_PER_SEC;
 
-	printf("\nexecution time = %f\n", time_spent);
+	//printf("\nexecution time = %f\n", time_spent);
 
 	return 0;
 }
