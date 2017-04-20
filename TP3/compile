@@ -1,1 +1,1 @@
-g++ -Wall -Wno-unused-function blyat.cpp -o blyat
+g++ -Wall -Wno-unused-function mcs.cpp -o mcs
