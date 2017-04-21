@@ -1,0 +1,4409 @@
+last x = 8
+BB | Testing X_INDEX = 0 | xarray[0] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 0 | NEW Intermediate = 0
+
+Minimize | Intermediate = 0 < l_bound = 99999
+Minimize | LOWER BOUND = 0
+BB | Testing X_INDEX = 1 | xarray[1] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 1 | NEW Intermediate = -70
+
+Minimize | Intermediate = -70 < l_bound = 0
+Minimize | LOWER BOUND = -70
+BB | Testing X_INDEX = 2 | xarray[2] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 2 | NEW Intermediate = -70
+BB | Testing X_INDEX = 3 | xarray[3] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+BB | Testing X_INDEX = 4 | xarray[4] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+BB | Testing X_INDEX = 5 | xarray[5] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 6 | xarray[6] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 7 | xarray[7] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 7 | xarray[7] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 6 | xarray[6] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 6 | NEW Intermediate = -168
+
+Minimize | Intermediate = -168 < l_bound = -70
+Minimize | LOWER BOUND = -168
+BB | Testing X_INDEX = 7 | xarray[7] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 7 | NEW Intermediate = -168
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 8 | NEW Intermediate = -168
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 9 | NEW Intermediate = -168
+BB | Testing X_INDEX = 7 | xarray[7] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 7 | NEW Intermediate = -168
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 8 | NEW Intermediate = -168
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 9 | NEW Intermediate = -168
+BB | Testing X_INDEX = 5 | xarray[5] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -46 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -46 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -46 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 6 | xarray[6] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -46 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -46 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -46 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 7 | xarray[7] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -46 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -46 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -46 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -46 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -46 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -46 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -46 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -46 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -46 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -46 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -46 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -46 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -46 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -46 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -46 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -46 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -46 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -46 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 7 | xarray[7] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 6 | xarray[6] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 6 | NEW Intermediate = -168
+BB | Testing X_INDEX = 7 | xarray[7] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 7 | NEW Intermediate = -168
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 8 | NEW Intermediate = -168
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 9 | NEW Intermediate = -168
+BB | Testing X_INDEX = 4 | xarray[4] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = -74 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = -74 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 4 | NEW Intermediate = -70
+BB | Testing X_INDEX = 5 | xarray[5] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 18 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = -82 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = -82 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 6 | xarray[6] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 18 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = -82 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = -82 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 7 | xarray[7] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 18 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = -82 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = -82 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 18 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = -82 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = -82 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 18 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = -82 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = -82 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 18 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = -82 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = -82 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 18 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = -82 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 18 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = -82 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 18 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = -82 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 7 | xarray[7] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 6 | xarray[6] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = -74 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 6 | NEW Intermediate = -70
+BB | Testing X_INDEX = 7 | xarray[7] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = -74 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = -74 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 7 | NEW Intermediate = -70
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = -74 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = -74 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 8 | NEW Intermediate = -70
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = -74 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = -74 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 9 | NEW Intermediate = -70
+BB | Testing X_INDEX = 2 | xarray[2] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = -74 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = -74 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 2 | NEW Intermediate = -70
+BB | Testing X_INDEX = 3 | xarray[3] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 3 | NEW Intermediate = -168
+BB | Testing X_INDEX = 4 | xarray[4] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 4 | NEW Intermediate = -168
+BB | Testing X_INDEX = 5 | xarray[5] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 6 | xarray[6] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 7 | xarray[7] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 7 | xarray[7] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 6 | xarray[6] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 6 | NEW Intermediate = -168
+BB | Testing X_INDEX = 7 | xarray[7] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 7 | NEW Intermediate = -168
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 8 | NEW Intermediate = -168
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 9 | NEW Intermediate = -168
+BB | Testing X_INDEX = 1 | xarray[1] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 1 | NEW Intermediate = -168
+BB | Testing X_INDEX = 2 | xarray[2] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 2 | NEW Intermediate = -168
+BB | Testing X_INDEX = 3 | xarray[3] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 3 | NEW Intermediate = -168
+BB | Testing X_INDEX = 4 | xarray[4] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 4 | NEW Intermediate = -168
+BB | Testing X_INDEX = 5 | xarray[5] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 6 | xarray[6] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 7 | xarray[7] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 18 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[5] = 1 | constants[5] = 64 | constraints[1][5] = 9
+sum = -80 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -80 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[5] = 1 | constants[5] = 64 | constraints[2][5] = 1
+sum = 1 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 1 | constraints[2][46] = 0
+BB | Testing X_INDEX = 7 | xarray[7] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[5] = 1 | constants[5] = 64 | constraints[0][5] = -8
+sum = 118 | constraints[0][46] = 67
+BB | Testing X_INDEX = 6 | xarray[6] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 6 | NEW Intermediate = -168
+BB | Testing X_INDEX = 7 | xarray[7] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 7 | NEW Intermediate = -168
+BB | Testing X_INDEX = 8 | xarray[8] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 8 | NEW Intermediate = -168
+BB | Testing X_INDEX = 9 | xarray[9] = 1
+
+## TESTING CONSTRAINTS ##
+
+xarray[0] = 1 | constants[0] = 0 | constraints[0][0] = 0
+sum = 0 | constraints[0][46] = 67
+xarray[1] = 1 | constants[1] = 70 | constraints[0][1] = 26
+sum = 26 | constraints[0][46] = 67
+xarray[2] = 1 | constants[2] = 84 | constraints[0][2] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[3] = 1 | constants[3] = 98 | constraints[0][3] = 100
+sum = 126 | constraints[0][46] = 67
+xarray[4] = 1 | constants[4] = 0 | constraints[0][4] = 0
+sum = 126 | constraints[0][46] = 67
+xarray[6] = 1 | constants[6] = 0 | constraints[0][6] = -100
+sum = 26 | constraints[0][46] = 67
+xarray[7] = 1 | constants[7] = 0 | constraints[0][7] = 0
+sum = 26 | constraints[0][46] = 67
+xarray[0] = 1 | constants[0] = 0 | constraints[1][0] = -56
+sum = -56 | constraints[1][46] = -25
+xarray[1] = 1 | constants[1] = 70 | constraints[1][1] = -75
+sum = -131 | constraints[1][46] = -25
+xarray[2] = 1 | constants[2] = 84 | constraints[1][2] = 76
+sum = -55 | constraints[1][46] = -25
+xarray[3] = 1 | constants[3] = 98 | constraints[1][3] = 0
+sum = -55 | constraints[1][46] = -25
+xarray[4] = 1 | constants[4] = 0 | constraints[1][4] = -34
+sum = -89 | constraints[1][46] = -25
+xarray[6] = 1 | constants[6] = 0 | constraints[1][6] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[7] = 1 | constants[7] = 0 | constraints[1][7] = 0
+sum = -89 | constraints[1][46] = -25
+xarray[0] = 1 | constants[0] = 0 | constraints[2][0] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[1] = 1 | constants[1] = 70 | constraints[2][1] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[2] = 1 | constants[2] = 84 | constraints[2][2] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[3] = 1 | constants[3] = 98 | constraints[2][3] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[4] = 1 | constants[4] = 0 | constraints[2][4] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[6] = 1 | constants[6] = 0 | constraints[2][6] = 0
+sum = 0 | constraints[2][46] = 0
+xarray[7] = 1 | constants[7] = 0 | constraints[2][7] = 0
+sum = 0 | constraints[2][46] = 0
+
+PASSED CONSTRAINTS | X_INDEX = 9 | NEW Intermediate = -168
+xbest[0] = 1
+xbest[1] = 1
+xbest[2] = 1
+xbest[3] = 1
+xbest[4] = 1
+xbest[5] = 0
+xbest[6] = 1
+xbest[7] = 0
+xbest[8] = 0
+xbest[9] = 1
+xbest[10] = 0
+xbest[11] = 0
+xbest[12] = 0
+xbest[13] = 0
+xbest[14] = 0
+xbest[15] = 0
+xbest[16] = 0
+xbest[17] = 0
+xbest[18] = 0
+xbest[19] = 0
+xbest[20] = 0
+xbest[21] = 0
+xbest[22] = 0
+xbest[23] = 0
+xbest[24] = 0
+xbest[25] = 0
+xbest[26] = 0
+xbest[27] = 0
+xbest[28] = 0
+xbest[29] = 0
+xbest[30] = 0
+xbest[31] = 0
+xbest[32] = 0
+xbest[33] = 0
+xbest[34] = 0
+xbest[35] = 0
+xbest[36] = 0
+xbest[37] = 0
+xbest[38] = 0
+xbest[39] = 0
+xbest[40] = 0
+xbest[41] = 0
+xbest[42] = 0
+xbest[43] = 0
+xbest[44] = 0
+variable_change[0] = 0
+variable_change[1] = -1
+variable_change[2] = 0
+variable_change[3] = -1
+variable_change[4] = 0
+variable_change[5] = -1
+variable_change[6] = 0
+variable_change[7] = 0
+variable_change[8] = 0
+variable_change[9] = 0
+variable_change[10] = 0
+variable_change[11] = 0
+variable_change[12] = 0
+variable_change[13] = 0
+variable_change[14] = 0
+variable_change[15] = 0
+variable_change[16] = 0
+variable_change[17] = 0
+variable_change[18] = 0
+variable_change[19] = 0
+variable_change[20] = 0
+variable_change[21] = 0
+variable_change[22] = 0
+variable_change[23] = 0
+variable_change[24] = 0
+variable_change[25] = 0
+variable_change[26] = 0
+variable_change[27] = 0
+variable_change[28] = 0
+variable_change[29] = 0
+variable_change[30] = 0
+variable_change[31] = 0
+variable_change[32] = 0
+variable_change[33] = 0
+variable_change[34] = 0
+variable_change[35] = 0
+variable_change[36] = 0
+variable_change[37] = 0
+variable_change[38] = 0
+variable_change[39] = 0
+variable_change[40] = 0
+variable_change[41] = 0
+variable_change[42] = 0
+variable_change[43] = 0
+variable_change[44] = 0
+20
+
+execution time = 0.003917

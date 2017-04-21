@@ -1,0 +1,6 @@
+minimize
+x1
+st
+56x1=56
+x1=0
+BINARY

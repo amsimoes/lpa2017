@@ -1,0 +1,6 @@
+maximize
+2x1+3x2+4x3+5x4
+st
+2x1+3x2=0
+3x2-4x4<=0
+BINARY

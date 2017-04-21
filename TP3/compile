@@ -1,1 +1,1 @@
-g++ -Wall -Wno-unused-function mcs.cpp -o mcs
+g++ -Wall -Wno-unused-function blp.cpp -o blp
