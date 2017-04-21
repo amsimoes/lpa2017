@@ -15,7 +15,7 @@ int constraints[1000][48];
 int constraints_sum_pos[1000][45];
 int constraints_sum_neg[1000][45];
 bool xs_existent[45];
-//int x_best[45];
+
 int best;
 int constraints_count;
 int x_count;
@@ -34,10 +34,7 @@ void get_constraints(){
 	int positive = 1;
 
 	while((scan = getchar())) {
-		//cout << "scan " << scan << endl;
 		if(scan == 'x') {
-			//printf("dentro do x das constraints o mano\n");
-			//cout << "x_count " << x_count << endl;
 			x_count_c++;
 			string x_number = "";
 			int x;
@@ -49,9 +46,8 @@ void get_constraints(){
 			}
 
 			x = atoi(x_number.c_str());
-			//printf("before access\n");
+			
 			xs_existent[x-1] = true;
-			//printf("after access\n");
 
 			if(x > max_x)
 				max_x = x;
@@ -77,11 +73,9 @@ void get_constraints(){
 		}
 
 		if(scan == '+') {
-			//printf("dentro do + das constraints o mano \n");
 			number = "";
 			positive = 1;
 		} else if(scan == '=') {
-			//printf("dentro do - das constraints o mano \n");
 			string constraint_number = "";
 
 			scan = getchar();
@@ -98,7 +92,6 @@ void get_constraints(){
 			constraints_count++;
 			positive = 1;
 		} else if(scan == '<') {
-			//printf("dentro do < das constraints o mano \n");
 			if((scan = getchar()) == '=') {
 				string constraint_number = "";
 
@@ -118,7 +111,6 @@ void get_constraints(){
 				positive = 1;
 			}
 		} else if(scan == '>') {
-			//printf("dentro do > das constraints o mano \n");
 			if((scan = getchar()) == '=') {
 				string constraint_number = "";
 
@@ -138,16 +130,13 @@ void get_constraints(){
 				positive = 1;
 			}
 		} else if(scan == '-') {
-			//printf("dentro do - de fora das constraints o mano \n");
 			number = "";
 			positive = 0;
 		} else if(scan == '\n') {
-			//printf("dentro do barra n das constraints o mano \n");
 			number = "";
 			x_count_c = 0;
 			constraints_count++;
 		} else if(scan == 'B') {
-			//printf("dentro do B das constraints o mano \n");
 			//binary
 			char* line = (char*) malloc(50*sizeof(char));
 			scanf("%s", line);
@@ -158,43 +147,37 @@ void get_constraints(){
 			number += scan;
 		}
 	}
-	//return max_x;
 }
 
 void parse_equation() {
 	char scan;
-	//int max_x;
+
 	string number = "";
 	x_count = 0;
 	int positive = 1;
 
 	while((scanf("%c",&scan))) {  
-		//printf("sou o scan no inicio da parse_equation : %c\n", scan);
 		if(scan == '+') {
-			//printf("dentro do + da expressao o mano \n");
 			number = "";
 			positive = 1;
 		} else if(scan == '-') {
-			//printf("dentro do - da expressao o mano \n");
 			number = "";
 			positive = 0;
 		} else if(scan == 'x') {
-			//printf("dentro do x da expressao o mano \n");
 			x_count++;
 			string x_number = "";
 			int x;
 
 			scan = getchar();
 			while(scan != '+' && scan != '-' && scan != '\n') {
-				//printf("dentro do while dentro do x da expressao o mano \n");
 				x_number += scan;
 				scan = getchar();
 			}
 
 			x = atoi(x_number.c_str());
-			//printf("before access eq\n");
+			
 			xs_existent[x-1] = true;
-			//printf("after access eq\n");
+			
 			if(x > max_x)
 				max_x = x;
 			xs_in_eq[x_count-1] = x-1;
@@ -227,52 +210,32 @@ void parse_equation() {
 			number += scan;
 		}
 	}
-	//return max_x;
 }
 
-int test_constraints(int x_index){ // -1 -> impossÃ­vel || 0 -> certo || 1 -> pode continuar
+int test_constraints(int x_index) { // -1 -> impossi­vel || 0 -> certo || 1 -> pode continuar
 	int flag = 0;
-	for(int i=0; i<constraints_count; i++){
+	for(int i=0; i<constraints_count; i++) {
 		int aux = constraints[i][47];
-		if(constraints[i][45] == 1 && aux < constraints[i][46]){
+		if(constraints[i][45] == 1 && aux < constraints[i][46]) {
 			flag = 1;
-			/*for(int j=x_index+1; j<max_x; j++){
-				if(constraints[i][j] > 0)
-					aux+=constraints[i][j];
-			}*/
 			aux += constraints_sum_pos[i][x_index+1];
 			if(aux < constraints[i][46])
 				return -1;
-		}
-		else if(constraints[i][45] == 0){
-			if(aux > constraints[i][46]){
+		} else if(constraints[i][45] == 0) {
+			if(aux > constraints[i][46]) {
 				flag = 1;
-				/*for(int j=x_index+1; j<max_x; j++){
-					if(constraints[i][j] < 0)
-						aux+=constraints[i][j];
-				}*/
 				aux += constraints_sum_neg[i][x_index+1];
 				if(aux > constraints[i][46])
 					return -1;
-			}
-			else if(aux < constraints[i][46]){
+			} else if(aux < constraints[i][46]) {
 				flag = 1;
-				/*for(int j=x_index+1; j<max_x; j++){
-					if(constraints[i][j] > 0)
-						aux+=constraints[i][j];
-				}*/
 				aux += constraints_sum_pos[i][x_index+1];
 				if(aux < constraints[i][46])
 					return -1;
 			}
-		}
-		else if(constraints[i][45] == -1 && aux > constraints[i][46]){
+		} else if(constraints[i][45] == -1 && aux > constraints[i][46]) {
 			flag = 1;
-			/*for(int j=x_index+1; j<max_x; j++){
-				if(constraints[i][j] < 0)
-					aux+=constraints[i][j];
-			}*/
-			aux+=constraints_sum_neg[i][x_index+1];
+			aux += constraints_sum_neg[i][x_index+1];
 			if(aux > constraints[i][46])
 				return -1;
 		}
@@ -283,22 +246,6 @@ int test_constraints(int x_index){ // -1 -> impossÃ­vel || 0 -> certo || 1 -> 
 }
 
 int find_next(int index){
-
-	//printf("testing x%d\n", index);
-	/*int v = 50;
-	for(int i=0; i<constraints_count; i++){
-		for(int j=index; j<max_x; j++){
-			if((constraints[i][j] != 0 || constants[j] != 0) && j < v){
-				//printf("next valid is x%d\n", j+1);
-				v = j;
-			}
-		}
-	}
-	if (v == 50)
-		return -1;
-
-	//printf("there isn't a valid index\n");
-	return v;*/
 	for(int i=index; i<45; i++){
 		if(xs_existent[i])
 			return i;
@@ -307,70 +254,37 @@ int find_next(int index){
 }
 
 void branch_and_bound(int x_index, int max_or_min, int current_sum){
-	//printf("\n\nentrei numa nova recursao:\n\n");
-
-	/*for(int i = 0; i<max_x; i++){
-		printf("x_test[%d] = %d\n", i, x_test[i]);
-	}*/
-	//printf("x_index = %d\n", x_index);
-	// ----------
-	// Verifies if x_index is on any constraint or the equation
-	/*bool valid = false;
-	for(int i=0; i<constraints_count; i++){
-		if(constraints[i][x_index] != 0)
-			valid = true;
-	}
-	if(!valid && constants[x_index] == 0){
-		if(x_index != max_x - 1){
-			branch_and_bound(x_index+1, max_or_min); // Call for Branch and Bound with x_test[x_index+1] = 0
-			x_test[x_index+1] = 1;
-			branch_and_bound(x_index+1, max_or_min); // Call for Branch and Bound with x_test[x_index+1] = 0
-			x_test[x_index+1] = 0; // Reset for when returning from recursive call
-			return;
-		}
-	}	*/
-	// ----------
-	if(max_or_min == 1){
+	if(max_or_min == 1) {
 		if(current_sum + constants_sum_pos[x_index+1] < best)
 			return;
-	}
-	else if(max_or_min == -1){
+	} else if(max_or_min == -1) {
 		if(current_sum + constants_sum_neg[x_index+1] > best)
 			return;
 	}
+
 	int test = test_constraints(x_index);
-	if(test == 0){ // Se passar nas constraints
+	if(test == 0) { // Se passar nas constraints
 		solution = true;
-		//int val = calc_expression(); // Returns value of expression with current values of x_test
-		if(max_or_min == 1){ // Maximizar
-			//printf("current_sum: %d, x_test[%d]: %d\n", current_sum, x_index, x_test[x_index]);
+		if(max_or_min == 1) { // Maximizar
 			if(current_sum > best)
 				best = current_sum;
 
 			int next = find_next(x_index+1);
 			if(next == -1)
 				return;
-			//int sum_aux = 0;
-			/*for (int k = next; k < 45; k++){
-				if(constants[k]>0)
-					sum_aux += constants[k];
-			}*/
-			//if(current_sum + sum_aux > best){
-				x_test[next] = 0;
-				branch_and_bound(next, max_or_min, current_sum); // Call for Branch and Bound with x_test[next] = 0
-				for(int i = 0; i<constraints_count; i++){
-					constraints[i][47]+=constraints[i][next];
-				}
-				x_test[next] = 1;
-				branch_and_bound(next, max_or_min, current_sum + constants[next]); // Call for Branch and Bound with x_test[next] = 1
-				for(int i = 0; i<constraints_count; i++){
-					constraints[i][47]-=constraints[i][next];
-				}
-				x_test[next] = 0;
-				return;
-			//}
-		}
-		else if(max_or_min == -1){ // Minimizar
+			x_test[next] = 0;
+			branch_and_bound(next, max_or_min, current_sum); // Call for Branch and Bound with x_test[next] = 0
+			for(int i = 0; i<constraints_count; i++){
+				constraints[i][47]+=constraints[i][next];
+			}
+			x_test[next] = 1;
+			branch_and_bound(next, max_or_min, current_sum + constants[next]); // Call for Branch and Bound with x_test[next] = 1
+			for(int i = 0; i<constraints_count; i++){
+				constraints[i][47]-=constraints[i][next];
+			}
+			x_test[next] = 0;
+			return;
+		} else if(max_or_min == -1) { // Minimizar
 			//printf("current_sum: %d, x_test[%d]: %d\n", current_sum, x_index, x_test[x_index]);
 			if(current_sum < best)
 				best = current_sum;
@@ -378,35 +292,31 @@ void branch_and_bound(int x_index, int max_or_min, int current_sum){
 			int next = find_next(x_index+1);
 			if(next == -1)
 				return;
-			/*int sum_aux = 0;
-			for (int k = next; k < 45; k++){
-				if(constants[k]<0)
-					sum_aux += constants[k];
-			}*/
-			//if(current_sum + sum_aux < best){
-				x_test[next] = 0;
-				branch_and_bound(next, max_or_min, current_sum); // Call for Branch and Bound with x_test[next] = 0
-				for(int i = 0; i<constraints_count; i++){
-					constraints[i][47]+=constraints[i][next];
-				}
-				x_test[next] = 1;
-				branch_and_bound(next, max_or_min, current_sum + constants[next]); // Call for Branch and Bound with x_test[next] = 1
-				for(int i = 0; i<constraints_count; i++){
-					constraints[i][47]-=constraints[i][next];
-				}
-				x_test[next] = 0;
-				return;
-			//}
+
+			x_test[next] = 0;
+			branch_and_bound(next, max_or_min, current_sum); // Call for Branch and Bound with x_test[next] = 0
+			for(int i = 0; i<constraints_count; i++){
+				constraints[i][47]+=constraints[i][next];
+			}
+			x_test[next] = 1;
+			branch_and_bound(next, max_or_min, current_sum + constants[next]); // Call for Branch and Bound with x_test[next] = 1
+			for(int i = 0; i<constraints_count; i++){
+				constraints[i][47]-=constraints[i][next];
+			}
+			x_test[next] = 0;
+
+			return;
 		}
+
 		return;
-	}
-	else if(test == 1){ // Se nÃ£o passar nas constraints
+	} else if(test == 1) { // Se nao passar nas constraints
 		if(x_index == max_x-1)
 			return;
-		//printf("current_sum: %d, x_test[%d]: %d\n", current_sum, x_index, x_test[x_index]);
+		
 		int next = find_next(x_index+1);
 		if(next == -1)
 			return;
+		
 		x_test[next] = 0;
 		branch_and_bound(next, max_or_min, current_sum); // Call for Branch and Bound with x_test[next] = 0
 		for(int i = 0; i<constraints_count; i++){
@@ -418,13 +328,12 @@ void branch_and_bound(int x_index, int max_or_min, int current_sum){
 			constraints[i][47]-=constraints[i][next];
 		}
 		x_test[next] = 0;
+
 		return;
-		}
-	else if(test == -1){
+	} else if(test == -1) {
 		return;
 	}
 }
-
 
 void algorithm(int max_or_min) {
 	if (max_or_min == 1){
@@ -432,27 +341,25 @@ void algorithm(int max_or_min) {
 	} else {
 		best = INT_MAX;
 	}
+
 	solution = false;
 	int current_sum = 0;
 	x_test[0] = 0;
+	
 	branch_and_bound(0, max_or_min, current_sum); // Call for Branch and Bound with x_test[0] = 0
+	
 	x_test[0] = 1; // Change x_test[0] to call Branch and Bound
 	for(int i = 0; i<constraints_count; i++){
 		constraints[i][47]+=constraints[i][0];
 	}
+	
 	branch_and_bound(0, max_or_min, constants[0]); // Call for Branch and Bound with x_test[0] = 1
+	
 	if(!solution)
 		printf("INFEASIBLE\n");
 	else
 		printf("%d\n",best);
-	/*for(int i=0; i<max_x; i++){
-		if(xs_existent[i])
-			printf("%d: true\n",i);
-		if(!xs_existent[i])
-			printf("%d: false\n",i);
-	}*/
 }
-
 
 int main() {
 	//clock_t begin = clock();
@@ -462,6 +369,7 @@ int main() {
 	for(int i=0; i<45; i++){
 		xs_existent[i] = false;
 	}
+
 	while(scanf("%s\n",line) >= 1) {
 		if(!strcmp("maximize",line)){
 			for(int i=0; i<constraints_count; i++) {
@@ -472,8 +380,10 @@ int main() {
 					xs_existent[j] = false;
 				}
 			}
+
 			constraints_count = 0;
 			parse_equation();
+
 			for(int i=0; i<constraints_count; i++){
 				if(constraints[i][max_x-1] > 0)
 					constraints_sum_pos[i][max_x-1] = constraints[i][max_x-1];
@@ -483,34 +393,34 @@ int main() {
 					constraints_sum_pos[i][max_x-1] = 0;
 					constraints_sum_neg[i][max_x-1] = 0;
 				}
-				for(int j=43; j>=0; j--){
-					if(constraints[i][j] > 0){
+				for(int j=43; j>=0; j--) {
+					if(constraints[i][j] > 0) {
 						constraints_sum_pos[i][j] = constraints_sum_pos[i][j+1] + constraints[i][j];
 						constraints_sum_neg[i][j] = constraints_sum_neg[i][j+1];
-					}
-					else if(constraints[i][j] < 0){
+					} else if(constraints[i][j] < 0) {
 						constraints_sum_neg[i][j] = constraints_sum_neg[i][j+1] + constraints[i][j];
 						constraints_sum_pos[i][j] = constraints_sum_pos[i][j+1];
-					}
-					else if(constraints[i][j] == 0){
+					} else if(constraints[i][j] == 0) {
 						constraints_sum_neg[i][j] = constraints_sum_neg[i][j+1];
 						constraints_sum_pos[i][j] = constraints_sum_pos[i][j+1];
 					}
 				}
 			}
+
 			if(constants[44] > 0)
 				constants_sum_pos[44] = constants[44];
 			else
 				constants_sum_pos[44] = 0;
+
 			for(int i=43; i>=0; i--){
 				if(constants[i] > 0){
 					constants_sum_pos[i] = constants_sum_pos[i+1] + constants[i];
-				}
-				else{
+				} else {
 					constants_sum_pos[i] = constants_sum_pos[i+1];
 				}
 			}
 			algorithm(1);
+
 		} else if(!strcmp("minimize",line)) {
 			for(int i=0; i<constraints_count; i++) {
 				for(int j=0; j<48; j++) {
@@ -522,6 +432,7 @@ int main() {
 			}
 			constraints_count = 0;
 			parse_equation();
+
 			for(int i=0; i<constraints_count; i++){
 				if(constraints[i][max_x-1] > 0)
 					constraints_sum_pos[i][max_x-1] = constraints[i][max_x-1];
@@ -531,37 +442,34 @@ int main() {
 					constraints_sum_pos[i][max_x-1] = 0;
 					constraints_sum_neg[i][max_x-1] = 0;
 				}
+
 				for(int j=max_x-2; j>=0; j--){
 					if(constraints[i][j] > 0){
 						constraints_sum_pos[i][j] = constraints_sum_pos[i][j+1] + constraints[i][j];
 						constraints_sum_neg[i][j] = constraints_sum_neg[i][j+1];
-					}
-					else if(constraints[i][j] < 0){
+					} else if(constraints[i][j] < 0) {
 						constraints_sum_neg[i][j] = constraints_sum_neg[i][j+1] + constraints[i][j];
 						constraints_sum_pos[i][j] = constraints_sum_pos[i][j+1];
-					}
-					else{
+					} else {
 						constraints_sum_neg[i][j] = constraints_sum_neg[i][j+1];
 						constraints_sum_pos[i][j] = constraints_sum_pos[i][j+1];
 					}
-					//printf("constraints_sum_neg[%d][%d]: %d\n",i,j,constraints_sum_neg[i][j]);
-					//printf("constraints_sum_pos[%d][%d]: %d\n",i,j,constraints_sum_pos[i][j]);
-					//printf("constraints[%d][%d]: %d\n",i,j, constraints[i][j]);
 				}
 			}
+
 			if(constants[44] < 0)
 				constants_sum_neg[44] = constants[44];
 			else
 				constants_sum_neg[44] = 0;
+
 			for(int i=43; i>=0; i--){
 				if(constants[i] < 0){
 					constants_sum_neg[i] = constants_sum_neg[i+1] + constants[i];
-				}
-				else{
+				} else {
 					constants_sum_neg[i] = constants_sum_neg[i+1];
 				}
 			}
-			//printf("max_x%d\n", max_x);
+
 			algorithm(-1);
 		}
 	}
