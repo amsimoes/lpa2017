@@ -28,6 +28,15 @@ node dominance - "x dominates y" if:
 
 */
 
+void print_cur_state(int* places, int n_places) {
+	printf("STATE = [");
+	int i = 0;
+	for(i=0; i < n_places-1; i++) {
+		printf("%d, ", places[i]);
+	}
+	printf("%d]\n", places[i]);
+}
+
 void print_transitions(trans_t** transitions, int n_places, int n_transitions) {
 	//printf("+++++++++++++++++++++++++++\n");
 	printf("###############################\n");
@@ -45,8 +54,12 @@ void print_transitions(trans_t** transitions, int n_places, int n_transitions) {
 }
 
 void dfs(int* places, trans_t** transitions, int n_places, int n_transitions, int level) {
+	print_cur_state(places, n_places);
 	print_transitions(transitions, n_places, n_transitions);
-	//ver as transicoes que podem ser feitas, por ordem crescente ||||| se se puder fazer, alterar array de places, chamar a funcao recursiva |||| depois tirar a cena que foi alterada e continuar o for || se for 
+
+	// ver as transicoes que podem ser feitas, por ordem crescente ||||| 
+	// se se puder fazer, alterar array de places, chamar a funcao recursiva |||| 
+	// depois tirar a cena que foi alterada e continuar o for || se for 
 	for(int i=0; i < n_transitions; i++) {
 		int aux = 0;
 		for(int j = 0; j<n_places; j++){
@@ -98,7 +111,6 @@ void input(int &n_places, int &n_transitions, trans_t** &transitions, int* place
 	fgets(line, 16, stdin);
 	for(int i=0; i<n_places; i++){
 		scanf("%d ",&places[i]);
-		//printf("places[%d]: %d\n", i, places[i]);
 	}
 }
 
