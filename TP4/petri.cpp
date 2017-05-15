@@ -74,14 +74,13 @@ void input(int &n_places, int &n_transitions, trans_t** &transitions, int* place
 	}
 
 	char line[64];
-
 	int n1, n2, type;
+	
 	while (scanf("%d %d %d", &n1, &n2, &type) == 3) {
 		if (type == 1) {	// Transição n1 vai para n2
 			transitions[n1-1]->dest[n2-1]++;
 			transitions[n1-1]->n_dest++;
-		} else {
-				// Transição n2 vem de n1
+		} else {	// Transição n2 vem de n1
 			transitions[n2-1]->from[n1-1]++;
 			transitions[n2-1]->n_from++;
 		}
