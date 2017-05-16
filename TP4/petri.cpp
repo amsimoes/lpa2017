@@ -4,9 +4,20 @@
 #include <stdlib.h>
 #include <string.h>
 
-using namespace std;
+/* Funcoes...
 
-/* Estrutura para os pontos partida + outra para as transições */
+check if:
+root node - petri net initial state
+terminal node - this is any node from which no transition can fire
+duplicate node - a node identical to a node already in the tree
+
+node dominance - "x dominates y" if:
+(a) y(p) <= x(p) for all values of p
+(b) y(p) < x(p) for at least some p
+
+*/
+
+using namespace std;
 
 struct trans_t {
 	int n_from;
@@ -25,22 +36,9 @@ struct node_t {
 	node_t** children;
 };
 
-/* Funcoes...
-
-check if:
-root node - petri net initial state
-terminal node - this is any node from which no transition can fire
-duplicate node - a node identical to a node already in the tree
-
-node dominance - "x dominates y" if:
-(a) y(p) <= x(p) for all values of p
-(b) y(p) < x(p) for at least some p
-
-*/
-
-void new_node(int* places, int n_places, int depth_level, int terminal, node_t* parent) {
+node_t* new_node(int* places, int n_places, int depth_level, int terminal, node_t* parent) {
 	node_t* n = (node_t*) malloc (sizeof(node_t));
-	n->places = malloc (sizeof(int) * n_places);
+	n->places = (int*) malloc (sizeof(int) * n_places);
 	memcpy(n->places, places, n_places * sizeof(int));
 	n->depth_level = depth_level;
 	n->terminal = terminal;
@@ -51,24 +49,32 @@ void new_node(int* places, int n_places, int depth_level, int terminal, node_t* 
 	} else {
 		n->parent = NULL;
 	}
+	n->children = NULL;
+	return n;
 }
 
 void insert_children_node(node_t* &parent, node_t* &child) {
 	parent->n_children++;
+	int n_children = parent->n_children;
 	parent->children = (node_t**) realloc (parent->children, sizeof(node_t*) * n_children);
+	parent->children[n_children-1] = (node_t*) malloc (sizeof(node_t));
 	memcpy(parent->children[n_children-1], child, sizeof(node_t));
 
 	child->parent = (node_t*) malloc (sizeof(node_t));
 	memcpy(child->parent, parent, sizeof(node_t));
 }
 
-void print_cur_state(int* places, int n_places) {
+void set_node_terminal(node_t* n) {
+	n->terminal = 1;
+}
+
+void print_cur_state(node_t* n, int n_places) {
 	printf("STATE = [");
 	int i = 0;
 	for(i=0; i < n_places-1; i++) {
-		printf("%d, ", places[i]);
+		printf("%d, ", n->places[i]);
 	}
-	printf("%d]\n", places[i]);
+	printf("%d]\n", n->places[i]);
 }
 
 void print_transitions(trans_t** transitions, int n_places, int n_transitions) {
@@ -89,6 +95,7 @@ void print_transitions(trans_t** transitions, int n_places, int n_transitions) {
 
 int evaluate_transition(int* places, int* from, int n_places) {
 	for(int i=0; i < n_places; i++) {
+		printf("places[%d] = %d / from[%d] = %d\n", i, places[i], i, from[i]);
 		if (places[i] < from[i]) {
 			return 0;
 		}
@@ -96,25 +103,56 @@ int evaluate_transition(int* places, int* from, int n_places) {
 	return 1;
 }
 
-void dfs(int* places, trans_t** transitions, int n_places, int n_transitions, int level) {
-	print_cur_state(places, n_places);
-	print_transitions(transitions, n_places, n_transitions);
+void calc_transition(int* places, int* &new_places, int n_places, int* dest) {
+	for (int i=0; i < n_places; i++) {
+		if (dest[i] > 0) {
+			new_places[i] = places[i] + 1;
+		} else {
+			new_places[i] = 0;
+		}
+	}
+}
+
+void dfs(node_t* parent, trans_t** transitions, int n_places, int n_transitions, int level) {
+	print_cur_state(parent, n_places);
+	//print_transitions(transitions, n_places, n_transitions);
 
 	// evaluate the transition function for all transitions
 	int trans_defined = 0;
 	for (int i=0; i < n_transitions; i++) {
-		if (evaluate_transition(places, transitions[i]->from, n_places)) {
+		if (evaluate_transition(parent->places, transitions[i]->from, n_places)) {
+			int* new_places = (int*) malloc (sizeof(int) * n_places);
+			calc_transition(parent->places, new_places, n_places, transitions[i]->dest);
+			node_t* child = new_node(new_places, n_places, level+1, 0, parent);
+			print_cur_state(child, n_places);
+			insert_children_node(parent, child);
+
 			trans_defined = 1;
-			new_node
 		}
 	}
 
 	if (!trans_defined) {	// mark place as terminal, nenhuma transition possivel
-
+		set_node_terminal(parent);
 	}
 }
 
-void input(int &n_places, int &n_transitions, trans_t** &transitions, int* places) {
+void print_tree(node_t* node, int n_places) {
+	int i;
+	for (i=0; i < node->depth_level; i++) {
+		printf(" ");
+	}
+
+	for (i=0; i < n_places; i++) {
+		printf("%d ", node->places[i]);
+	}
+	printf("\n");
+
+	for (i=0; i < node->n_children; i++) {
+		print_tree(node->children[i], n_places);
+	}
+}
+
+node_t* input(int &n_places, int &n_transitions, trans_t** &transitions, int* places) {
 	scanf("%d %d", &n_places, &n_transitions);
 
 	transitions = (trans_t**) malloc (n_transitions * sizeof(trans_t*));
@@ -151,7 +189,7 @@ void input(int &n_places, int &n_transitions, trans_t** &transitions, int* place
 	for(int i=0; i<n_places; i++) {
 		scanf("%d ", &places[i]);
 	}
-	new_node()
+	return new_node(places, n_places, 0, 0, NULL);
 }
 
 int main() {
@@ -163,8 +201,9 @@ int main() {
 	int* places = (int*) malloc (sizeof(int) * n_places);
 	trans_t** transitions;
 
-	input(n_places, n_transitions, transitions, places);
-	dfs(places, transitions, n_places, n_transitions, 0);
+	node_t* root_node = input(n_places, n_transitions, transitions, places);
+	dfs(root_node, transitions, n_places, n_transitions, 0);
+	print_tree(root_node, n_places);
 
 	return 0;
 }
