@@ -16,6 +16,9 @@ struct trans_t {
 };
 
 struct node_t {
+	int* places;
+	int terminal;
+	int duplicated;
 	int depth_level;
 	int n_children;
 	node_t* parent;
@@ -34,6 +37,30 @@ node dominance - "x dominates y" if:
 (b) y(p) < x(p) for at least some p
 
 */
+
+void new_node(int* places, int n_places, int depth_level, int terminal, node_t* parent) {
+	node_t* n = (node_t*) malloc (sizeof(node_t));
+	n->places = malloc (sizeof(int) * n_places);
+	memcpy(n->places, places, n_places * sizeof(int));
+	n->depth_level = depth_level;
+	n->terminal = terminal;
+	n->n_children = 0;
+	if (parent != NULL) {
+		n->parent = (node_t*) malloc (sizeof(node_t));
+		memcpy(n->parent, parent, sizeof(node_t));
+	} else {
+		n->parent = NULL;
+	}
+}
+
+void insert_children_node(node_t* &parent, node_t* &child) {
+	parent->n_children++;
+	parent->children = (node_t**) realloc (parent->children, sizeof(node_t*) * n_children);
+	memcpy(parent->children[n_children-1], child, sizeof(node_t));
+
+	child->parent = (node_t*) malloc (sizeof(node_t));
+	memcpy(child->parent, parent, sizeof(node_t));
+}
 
 void print_cur_state(int* places, int n_places) {
 	printf("STATE = [");
@@ -76,12 +103,13 @@ void dfs(int* places, trans_t** transitions, int n_places, int n_transitions, in
 	// evaluate the transition function for all transitions
 	int trans_defined = 0;
 	for (int i=0; i < n_transitions; i++) {
-		if(evaluate_transition(places, transitions[i]->from, n_places)) {
+		if (evaluate_transition(places, transitions[i]->from, n_places)) {
 			trans_defined = 1;
+			new_node
 		}
 	}
 
-	if (!trans_defined) {	// mark place as terminal
+	if (!trans_defined) {	// mark place as terminal, nenhuma transition possivel
 
 	}
 }
@@ -117,10 +145,13 @@ void input(int &n_places, int &n_transitions, trans_t** &transitions, int* place
 		}
 	}
 
-	fgets(line, 16, stdin);
+	fgets(line, 16, stdin);	// STATE line
+
+	// root node
 	for(int i=0; i<n_places; i++) {
-		scanf("%d ",&places[i]);
+		scanf("%d ", &places[i]);
 	}
+	new_node()
 }
 
 int main() {
