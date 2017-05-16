@@ -9,10 +9,17 @@ using namespace std;
 /* Estrutura para os pontos partida + outra para as transições */
 
 struct trans_t {
-	int n_dest;
 	int n_from;
+	int n_dest;
 	int *from;
 	int *dest;
+};
+
+struct node_t {
+	int depth_level;
+	int n_children;
+	node_t* parent;
+	node_t** children;
 };
 
 /* Funcoes...
@@ -53,27 +60,29 @@ void print_transitions(trans_t** transitions, int n_places, int n_transitions) {
 	}
 }
 
+int evaluate_transition(int* places, int* from, int n_places) {
+	for(int i=0; i < n_places; i++) {
+		if (places[i] < from[i]) {
+			return 0;
+		}
+	}
+	return 1;
+}
+
 void dfs(int* places, trans_t** transitions, int n_places, int n_transitions, int level) {
 	print_cur_state(places, n_places);
 	print_transitions(transitions, n_places, n_transitions);
 
-	// ver as transicoes que podem ser feitas, por ordem crescente ||||| 
-	// se se puder fazer, alterar array de places, chamar a funcao recursiva |||| 
-	// depois tirar a cena que foi alterada e continuar o for || se for 
-	for(int i=0; i < n_transitions; i++) {
-		int aux = 0;
-		for(int j = 0; j<n_places; j++){
-			if(places[j] < transitions[i]->from[j]){
-				aux = -1;
-				break;
-			}
+	// evaluate the transition function for all transitions
+	int trans_defined = 0;
+	for (int i=0; i < n_transitions; i++) {
+		if(evaluate_transition(places, transitions[i]->from, n_places)) {
+			trans_defined = 1;
 		}
-		if(aux != -1){
-			//pode-se executar esta transicao
-			
+	}
 
-		}
-		
+	if (!trans_defined) {	// mark place as terminal
+
 	}
 }
 
@@ -109,7 +118,7 @@ void input(int &n_places, int &n_transitions, trans_t** &transitions, int* place
 	}
 
 	fgets(line, 16, stdin);
-	for(int i=0; i<n_places; i++){
+	for(int i=0; i<n_places; i++) {
 		scanf("%d ",&places[i]);
 	}
 }
