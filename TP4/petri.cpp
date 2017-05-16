@@ -95,7 +95,7 @@ void print_transitions(trans_t** transitions, int n_places, int n_transitions) {
 
 int evaluate_transition(int* places, int* from, int n_places) {
 	for(int i=0; i < n_places; i++) {
-		printf("places[%d] = %d / from[%d] = %d\n", i, places[i], i, from[i]);
+		//printf("places[%d] = %d / from[%d] = %d\n", i, places[i], i, from[i]);
 		if (places[i] < from[i]) {
 			return 0;
 		}
@@ -103,36 +103,40 @@ int evaluate_transition(int* places, int* from, int n_places) {
 	return 1;
 }
 
-void calc_transition(int* places, int* &new_places, int n_places, int* dest) {
+void calc_transition(int* places, int* &new_places, int n_places, int* from, int* dest) {
+	/*for (int k=0; k < n_places; k++) {
+		printf("places[%d] = %d / from[%d] = %d / dest[%d] = %d\n", k, places[k], k, from[k], k, dest[k]);
+	}*/
 	for (int i=0; i < n_places; i++) {
 		if (dest[i] > 0) {
 			new_places[i] = places[i] + 1;
 		} else {
-			new_places[i] = 0;
+			new_places[i] = places[i] - from[i];
 		}
 	}
 }
 
 void dfs(node_t* parent, trans_t** transitions, int n_places, int n_transitions, int level) {
 	print_cur_state(parent, n_places);
-	//print_transitions(transitions, n_places, n_transitions);
 
 	// evaluate the transition function for all transitions
 	int trans_defined = 0;
 	for (int i=0; i < n_transitions; i++) {
 		if (evaluate_transition(parent->places, transitions[i]->from, n_places)) {
+			printf("trans %d\n", i);
 			int* new_places = (int*) malloc (sizeof(int) * n_places);
-			calc_transition(parent->places, new_places, n_places, transitions[i]->dest);
+			calc_transition(parent->places, new_places, n_places, transitions[i]->from, transitions[i]->dest);
 			node_t* child = new_node(new_places, n_places, level+1, 0, parent);
-			print_cur_state(child, n_places);
+			//print_cur_state(child, n_places);
 			insert_children_node(parent, child);
-
+			dfs(child, transitions, n_places, n_transitions, level+1);
 			trans_defined = 1;
 		}
 	}
 
 	if (!trans_defined) {	// mark place as terminal, nenhuma transition possivel
 		set_node_terminal(parent);
+		return;
 	}
 }
 
@@ -142,10 +146,10 @@ void print_tree(node_t* node, int n_places) {
 		printf(" ");
 	}
 
-	for (i=0; i < n_places; i++) {
+	for (i=0; i < n_places - 1; i++) {
 		printf("%d ", node->places[i]);
 	}
-	printf("\n");
+	printf("%d\n", node->places[n_places-1]);
 
 	for (i=0; i < node->n_children; i++) {
 		print_tree(node->children[i], n_places);
@@ -202,6 +206,8 @@ int main() {
 	trans_t** transitions;
 
 	node_t* root_node = input(n_places, n_transitions, transitions, places);
+
+	print_transitions(transitions, n_places, n_transitions);
 	dfs(root_node, transitions, n_places, n_transitions, 0);
 	print_tree(root_node, n_places);
 
