@@ -65,6 +65,10 @@ void insert_children_node(node_t* &parent, node_t* &child) {
 	memcpy(child->parent, parent, sizeof(node_t));
 }
 
+void set_node_terminal(node_t* n) {
+	n->terminal = 1;
+}
+
 void print_cur_state(node_t* n, int n_places) {
 	printf("STATE = [");
 	int i = 0;
@@ -75,11 +79,13 @@ void print_cur_state(node_t* n, int n_places) {
 }
 
 void print_transitions(trans_t** transitions, int n_places, int n_transitions) {
+	//printf("+++++++++++++++++++++++++++\n");
 	printf("###############################\n");
 	for(int i=0; i < n_transitions; i++) {
 		for(int j=0; j < n_places; j++) {
 			printf("# transitions[%d]->from[%d] = %d #\n", i, j, transitions[i]->from[j]);
 		}
+		//printf("+++++++++++++++++++++++++++\n");
 		printf("# --------------------------- #\n");
 		for(int j=0; j < n_places; j++) {
 			printf("# transitions[%d]->dest[%d] = %d #\n", i, j, transitions[i]->dest[j]);
@@ -139,6 +145,9 @@ void check_dominated(node_t* parent, int* &new_places, int n_places) {
 }
 
 void calc_transition(int* places, int* &new_places, int n_places, int* from, int* dest) {
+	/*for (int k=0; k < n_places; k++) {
+		printf("places[%d] = %d / from[%d] = %d / dest[%d] = %d\n", k, places[k], k, from[k], k, dest[k]);
+	}*/
 	for (int i=0; i < n_places; i++) {
 		if (places[i] == -2) {
 			new_places[i] = -2;
@@ -154,8 +163,9 @@ void calc_transition(int* places, int* &new_places, int n_places, int* from, int
 
 void print_state(int* new_places, int n_places, int level) {
 	int i;
-	for (i=0; i < level; i++)
+	for (i=0; i < level; i++) {
 		printf(" ");
+	}
 
 	for (i=0; i < n_places - 1; i++) {
 		if (new_places[i] == -2)
@@ -163,7 +173,6 @@ void print_state(int* new_places, int n_places, int level) {
 		else 
 			printf("%d ", new_places[i]);
 	}
-
 	if (new_places[n_places-1] == -2)
 		printf("w\n");
 	else
@@ -172,25 +181,46 @@ void print_state(int* new_places, int n_places, int level) {
 }
 
 void dfs(node_t* parent, trans_t** transitions, int n_places, int n_transitions, int level) {
-	
+	//print_cur_state(parent, n_places);
+
 	// evaluate the transition function for all transitions
+	int trans_defined = 0;
 	for (int i=0; i < n_transitions; i++) {
+		/*for(int k=0; k < n_places; k++) {
+			printf("from[%d] = %d\n", k, transitions[i]->from[k]);
+		}*/
 		if (evaluate_transition(parent->places, transitions[i]->from, n_places)) {
+			//printf("TRANSICAO %d\n", i);
+
+			//for (int k = 0; k < n_places; k++)
+			//	printf("places[%d] = %d\n", k, parent->places[k]);
 			int* new_places = (int*) malloc (sizeof(int) * n_places);
 			calc_transition(parent->places, new_places, n_places, transitions[i]->from, transitions[i]->dest);
+			
+			/*for (int k = 0; k < n_places; k++)
+				printf("new_places[%d] = %d\n", k, new_places[k]);*/
 
 			if (check_duplicate(parent, new_places, n_places)) {
+				//printf("DUPLICATED\n");
 				node_t* child = new_node(new_places, n_places, level+1, 0, 1, parent);
 				insert_children_node(parent, child);
 				print_state(new_places, n_places, level+1);
+				//return;
 			} else {
 				check_dominated(parent, new_places, n_places);
 				node_t* child = new_node(new_places, n_places, level+1, 0, 0, parent);	
 				insert_children_node(parent, child);
+				//print_cur_state(child, n_places);
 				print_state(new_places, n_places, level+1);
 				dfs(child, transitions, n_places, n_transitions, level+1);
+				trans_defined = 1;
 			}
 		}
+	}
+
+	if (!trans_defined) {	// mark place as terminal, nenhuma transition possivel
+		set_node_terminal(parent);
+		return;
 	}
 }
 
