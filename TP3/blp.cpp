@@ -254,18 +254,18 @@ int find_next(int index){
 }
 
 void branch_and_bound(int x_index, int max_or_min, int current_sum){
-	if(max_or_min == 1) {
+	if (max_or_min == 1) {
 		if(current_sum + constants_sum_pos[x_index+1] < best)
 			return;
-	} else if(max_or_min == -1) {
+	} else if (max_or_min == -1) {
 		if(current_sum + constants_sum_neg[x_index+1] > best)
 			return;
 	}
 
 	int test = test_constraints(x_index);
-	if(test == 0) { // Se passar nas constraints
+	if (test == 0) { // Se passar nas constraints
 		solution = true;
-		if(max_or_min == 1) { // Maximizar
+		if (max_or_min == 1) { // Maximizar
 			if(current_sum > best)
 				best = current_sum;
 
@@ -330,13 +330,19 @@ void branch_and_bound(int x_index, int max_or_min, int current_sum){
 		x_test[next] = 0;
 
 		return;
-	} else if(test == -1) {
+	} else if (test == -1) {
 		return;
 	}
 }
 
 void algorithm(int max_or_min) {
-	if (max_or_min == 1){
+	for (int i=0; i < 1; i++) {
+		for (int j=0; j < 48; j++) {
+			printf("constraints[%d][%d] = %d\n", i, j, constraints[i][j]);
+		}
+	}
+
+	if (max_or_min == 1) {
 		best = INT_MIN;
 	} else {
 		best = INT_MAX;
@@ -350,7 +356,7 @@ void algorithm(int max_or_min) {
 	
 	x_test[0] = 1; // Change x_test[0] to call Branch and Bound
 	for(int i = 0; i<constraints_count; i++){
-		constraints[i][47]+=constraints[i][0];
+		constraints[i][47] += constraints[i][0];
 	}
 	
 	branch_and_bound(0, max_or_min, constants[0]); // Call for Branch and Bound with x_test[0] = 1
@@ -371,7 +377,7 @@ int main() {
 	}
 
 	while(scanf("%s\n",line) >= 1) {
-		if(!strcmp("maximize",line)){
+		if(!strcmp("maximize",line)) {
 			for(int i=0; i<constraints_count; i++) {
 				for(int j=0; j<48; j++) {
 					constraints[i][j] = 0;
@@ -419,6 +425,8 @@ int main() {
 					constants_sum_pos[i] = constants_sum_pos[i+1];
 				}
 			}
+
+
 			algorithm(1);
 
 		} else if(!strcmp("minimize",line)) {

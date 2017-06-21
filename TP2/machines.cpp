@@ -16,13 +16,10 @@ int *values;
 
 void readInput(){
     std::cin >> sections;
-    //std::cout << "Number of sections: " << sections << "\n";
     for(int i=0; i<sections; i++){
         std::cin >> machines_prob[i] >> machines_cost[i];
-        //std::cout << "Probability: " << machines_prob[i] << " " << "Cost: " << machines_cost[i] << "\n";
     }
     std::cin >> budget;
-    //std::cout << "Budget: " << budget << "\n";
 }
 
 void print_matrix(double matrix_prob[][1001]) {
@@ -51,56 +48,61 @@ double pow_prob(int num, double prob) {
 }
 
 void backtrack(int* solution, int section, int max_budget, double matrix_prob[][1001], int min_cost) {
+    printf("min cost = %d\n", min_cost);
     int counter = 0;
-    if(section!=1) {
-        for(int b=max_budget-machines_cost[section-1]; b>min_cost; b-=machines_cost[section-1]) {
+    if (section != 1) {
+        for (int b = max_budget - machines_cost[section-1]; b > min_cost; b -= machines_cost[section-1]) {
             counter++;
             double prob_atual = matrix_prob[section][max_budget];
             double abs = fabs(prob_atual-(matrix_prob[section-1][b]*(1-pow_prob(counter, machines_prob[section-1]))));
-            if(abs < 0.0000000000000002220446049) {
+            if (abs < 0.0000000000000002220446049) {
                 solution[section] = counter;
                 backtrack(solution, section-1, b, matrix_prob, min_costs[section]);
             }
         }
     }
 
-    if(section==1) {
+    if (section == 1) {
         solution[section] = max_budget/machines_cost[section-1];
         for(int i=1; i<sections; i++) {
             std::cout << solution[i] << " ";
         }
         std::cout << solution[sections] << std::endl;
     }
+
     return;
 }
 
-void knapsack(){
+void knapsack() {
     double machines_array[401][1001];
     double failure_prob;
     double prob;
     int solutions[401];
 
-    for(int i=0; i<=budget; i++){
+    for(int i=0; i <= budget; i++){
         machines_array[0][i] = 1;
     }
-    for(int i=1; i<=sections; i++){
-        for(int j=1; j<=budget; j++){
+
+    for (int i=1; i <= sections; i++) {
+        for (int j=1; j <= budget; j++) {
            machines_array[i][j] = 0;
-           int max = j/machines_cost[i-1];
+           int max = j / machines_cost[i-1];
            failure_prob = 1;
            double prob_atual = machines_prob[i-1];
            int cost_atual = machines_cost[i-1];
+
            for(int k=1; k<=max; k++){
               // (1-P)^n
               failure_prob *= (1-prob_atual);
               // 1-(1-P)^n * Valor Anterior
-              prob = (1-failure_prob)*(machines_array[i-1][j-(k*cost_atual)]);
-              if(prob > machines_array[i][j]){
+              prob = (1-failure_prob) * (machines_array[i-1][j-(k*cost_atual)]);
+              if (prob > machines_array[i][j]) {
                   machines_array[i][j] = prob;
               }
            }
         }
     }
+
     std::cout.precision(12);
     std::cout << std::fixed << machines_array[sections][budget] << std::endl;
     for(int i=budget; i>0; i--){
