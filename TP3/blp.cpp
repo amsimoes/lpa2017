@@ -212,18 +212,29 @@ void parse_equation() {
 	}
 }
 
+/*
+	45 -> sinal: -1 <= | 0 == | 1 >=
+	46 -> valor que igualas
+	47 -> guardar soma
+*/
+// BOUNDING TBM
 int test_constraints(int x_index) { // -1 -> impossi­vel || 0 -> certo || 1 -> pode continuar
 	int flag = 0;
-	for(int i=0; i<constraints_count; i++) {
+	for (int i=0; i<constraints_count; i++) {
 		int aux = constraints[i][47];
-		if(constraints[i][45] == 1 && aux < constraints[i][46]) {
+
+		if (constraints[i][45] == 1 && aux < constraints[i][46]) {	// >=
 			flag = 1;
+
+			// sendo aux menor, vai somar todos os positivos que ainda faltam
+			// e se mesmo assim o resultado for menor que o valor a igualar, é impossivel satisfazer a constraint
 			aux += constraints_sum_pos[i][x_index+1];
-			if(aux < constraints[i][46])
+			if(aux < constraints[i][46])	
 				return -1;
-		} else if(constraints[i][45] == 0) {
+		} else if(constraints[i][45] == 0) {	// = 
 			if(aux > constraints[i][46]) {
 				flag = 1;
+
 				aux += constraints_sum_neg[i][x_index+1];
 				if(aux > constraints[i][46])
 					return -1;
@@ -233,7 +244,7 @@ int test_constraints(int x_index) { // -1 -> impossi­vel || 0 -> certo || 1 -> 
 				if(aux < constraints[i][46])
 					return -1;
 			}
-		} else if(constraints[i][45] == -1 && aux > constraints[i][46]) {
+		} else if(constraints[i][45] == -1 && aux > constraints[i][46]) {	// <=
 			flag = 1;
 			aux += constraints_sum_neg[i][x_index+1];
 			if(aux > constraints[i][46])
@@ -253,40 +264,59 @@ int find_next(int index){
 	return -1;
 }
 
-void branch_and_bound(int x_index, int max_or_min, int current_sum){
-	if (max_or_min == 1) {
-		if(current_sum + constants_sum_pos[x_index+1] < best)
+void branch_and_bound(int x_index, int max_or_min, int current_sum) {
+
+	// BOUNDING
+	// constants_sum_pos acumula a soma até ao fim da primeira posicao para a final, na primeira tem a soma de todos os positivos da 2a pos ate a ultima
+	// neg acumula com os negativos
+	if (max_or_min == 1) { // Maximizar
+		// UPPER BOUND
+		// Se a soma atual + o acumulado ate ao fim das q faltam testar for menor que best, pode parar pq é impossivel
+		if(current_sum + constants_sum_pos[x_index+1] < best)	
 			return;
-	} else if (max_or_min == -1) {
+	} else if (max_or_min == -1) { // Minimizar
+		// LOWER BOUND
 		if(current_sum + constants_sum_neg[x_index+1] > best)
 			return;
 	}
 
 	int test = test_constraints(x_index);
-	if (test == 0) { // Se passar nas constraints
-		solution = true;
+
+	if (test == 0) { // Se passar nas constraints, é uma solucao mas pode ainda haver melhor
+		solution = true;	// Há pelo menos uma solucao
+
 		if (max_or_min == 1) { // Maximizar
-			if(current_sum > best)
+			if(current_sum > best)	// Atualizar o melhor valor
 				best = current_sum;
 
-			int next = find_next(x_index+1);
-			if(next == -1)
+			int next = find_next(x_index+1);	// proximo x existente
+			if (next == -1)	//  se nao existir, para
 				return;
+
+			// BRANCHING
+
 			x_test[next] = 0;
 			branch_and_bound(next, max_or_min, current_sum); // Call for Branch and Bound with x_test[next] = 0
+
+			// como queremos agora a testar o 1, somamos nas constraints o valor do x q vamos testar
 			for(int i = 0; i<constraints_count; i++){
-				constraints[i][47]+=constraints[i][next];
+				constraints[i][47] += constraints[i][next];
 			}
+			
 			x_test[next] = 1;
+			// chamar com current_sum + constants[next], pq x está a 1
 			branch_and_bound(next, max_or_min, current_sum + constants[next]); // Call for Branch and Bound with x_test[next] = 1
+			
+			// tem de ser por a 0 para quando volta a subir na recursao
 			for(int i = 0; i<constraints_count; i++){
-				constraints[i][47]-=constraints[i][next];
+				constraints[i][47] -= constraints[i][next];
 			}
 			x_test[next] = 0;
+			
 			return;
 		} else if(max_or_min == -1) { // Minimizar
 			//printf("current_sum: %d, x_test[%d]: %d\n", current_sum, x_index, x_test[x_index]);
-			if(current_sum < best)
+			if(current_sum < best)	// unica coisa a mudar do maximize
 				best = current_sum;
 
 			int next = find_next(x_index+1);
@@ -295,11 +325,13 @@ void branch_and_bound(int x_index, int max_or_min, int current_sum){
 
 			x_test[next] = 0;
 			branch_and_bound(next, max_or_min, current_sum); // Call for Branch and Bound with x_test[next] = 0
+			
 			for(int i = 0; i<constraints_count; i++){
 				constraints[i][47]+=constraints[i][next];
 			}
 			x_test[next] = 1;
 			branch_and_bound(next, max_or_min, current_sum + constants[next]); // Call for Branch and Bound with x_test[next] = 1
+			
 			for(int i = 0; i<constraints_count; i++){
 				constraints[i][47]-=constraints[i][next];
 			}
@@ -309,28 +341,32 @@ void branch_and_bound(int x_index, int max_or_min, int current_sum){
 		}
 
 		return;
-	} else if(test == 1) { // Se nao passar nas constraints
-		if(x_index == max_x-1)
+
+	} else if(test == 1) { // Ainda n ha solucao mas é possivel haver uma
+		if (x_index == max_x-1)	// se for o ultimo, acaba n vale a pena testar mais
 			return;
 		
 		int next = find_next(x_index+1);
-		if(next == -1)
+		if(next == -1)	// redundante com o primeiro if, testar se ha mais algum
 			return;
 		
 		x_test[next] = 0;
 		branch_and_bound(next, max_or_min, current_sum); // Call for Branch and Bound with x_test[next] = 0
+
+		x_test[next] = 1;
 		for(int i = 0; i<constraints_count; i++){
 			constraints[i][47]+=constraints[i][next];
 		}
-		x_test[next] = 1;
 		branch_and_bound(next, max_or_min, current_sum + constants[next]); // Call for Branch and Bound with x_test[next] = 1
+		
+
 		for(int i = 0; i<constraints_count; i++){
 			constraints[i][47]-=constraints[i][next];
 		}
 		x_test[next] = 0;
 
 		return;
-	} else if (test == -1) {
+	} else if (test == -1) {	// Impossivel passar
 		return;
 	}
 }
@@ -350,8 +386,8 @@ void algorithm(int max_or_min) {
 
 	solution = false;
 	int current_sum = 0;
-	x_test[0] = 0;
-	
+
+	x_test[0] = 0;	
 	branch_and_bound(0, max_or_min, current_sum); // Call for Branch and Bound with x_test[0] = 0
 	
 	x_test[0] = 1; // Change x_test[0] to call Branch and Bound
@@ -377,8 +413,9 @@ int main() {
 	}
 
 	while(scanf("%s\n",line) >= 1) {
+
 		if(!strcmp("maximize",line)) {
-			for(int i=0; i<constraints_count; i++) {
+			for(int i=0; i<constraints_count; i++) {	// INICIALIZAR
 				for(int j=0; j<48; j++) {
 					constraints[i][j] = 0;
 					constants[j] = 0;
@@ -426,7 +463,7 @@ int main() {
 				}
 			}
 
-
+			// max_or_min = 1
 			algorithm(1);
 
 		} else if(!strcmp("minimize",line)) {
@@ -478,14 +515,10 @@ int main() {
 				}
 			}
 
+			// max_or_min = -1
 			algorithm(-1);
 		}
 	}
-
-	//clock_t end = clock();
-	//double time_spent = (double) (end - begin) / CLOCKS_PER_SEC;
-
-	//printf("\nexecution time = %f\n", time_spent);
 
 	return 0;
 }
