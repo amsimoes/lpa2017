@@ -96,7 +96,6 @@ void print_transitions(trans_t** transitions, int n_places, int n_transitions) {
 
 int evaluate_transition(int* places, int* from, int n_places) {
 	for(int i=0; i < n_places; i++) {
-		//printf("places[%d] = %d / from[%d] = %d\n", i, places[i], i, from[i]);
 		if (places[i] < from[i] && places[i] != -2) {
 			return 0;
 		}
@@ -125,12 +124,12 @@ int check_duplicate(node_t* parent, int* new_places, int n_places) {
 
 void compare_dominated(int* arr_parent, int* &arr_child, int len) {
 	for (int i=0; i < len; i++) {
-		if (arr_parent[i] > arr_child[i]) {
+		if (arr_parent[i] > arr_child[i]) {	// Verifica compatibilidade
 			return;
 		}
 	}
 	for (int i=0; i < len; i++) {
-		if (arr_parent[i] < arr_child[i]) {
+		if (arr_parent[i] < arr_child[i]) {	// como 'w' está como -2 isto tambem funciona
 			arr_child[i] = -2;
 		}
 	}
@@ -145,9 +144,6 @@ void check_dominated(node_t* parent, int* &new_places, int n_places) {
 }
 
 void calc_transition(int* places, int* &new_places, int n_places, int* from, int* dest) {
-	/*for (int k=0; k < n_places; k++) {
-		printf("places[%d] = %d / from[%d] = %d / dest[%d] = %d\n", k, places[k], k, from[k], k, dest[k]);
-	}*/
 	for (int i=0; i < n_places; i++) {
 		if (places[i] == -2) {
 			new_places[i] = -2;
@@ -173,11 +169,11 @@ void print_state(int* new_places, int n_places, int level) {
 		else 
 			printf("%d ", new_places[i]);
 	}
+
 	if (new_places[n_places-1] == -2)
 		printf("w\n");
 	else
 		printf("%d\n", new_places[n_places-1]);
-
 }
 
 void dfs(node_t* parent, trans_t** transitions, int n_places, int n_transitions, int level) {
@@ -186,38 +182,31 @@ void dfs(node_t* parent, trans_t** transitions, int n_places, int n_transitions,
 	// evaluate the transition function for all transitions
 	int trans_defined = 0;
 	for (int i=0; i < n_transitions; i++) {
-		/*for(int k=0; k < n_places; k++) {
-			printf("from[%d] = %d\n", k, transitions[i]->from[k]);
-		}*/
-		if (evaluate_transition(parent->places, transitions[i]->from, n_places)) {
-			//printf("TRANSICAO %d\n", i);
 
-			//for (int k = 0; k < n_places; k++)
-			//	printf("places[%d] = %d\n", k, parent->places[k]);
+		if (evaluate_transition(parent->places, transitions[i]->from, n_places)) {	// Verifica se consegue fazer a trans
+
 			int* new_places = (int*) malloc (sizeof(int) * n_places);
 			calc_transition(parent->places, new_places, n_places, transitions[i]->from, transitions[i]->dest);
-			
-			/*for (int k = 0; k < n_places; k++)
-				printf("new_places[%d] = %d\n", k, new_places[k]);*/
 
-			if (check_duplicate(parent, new_places, n_places)) {
-				//printf("DUPLICATED\n");
-				node_t* child = new_node(new_places, n_places, level+1, 0, 1, parent);
-				insert_children_node(parent, child);
-				print_state(new_places, n_places, level+1);
-				//return;
-			} else {
-				check_dominated(parent, new_places, n_places);
+			if (check_duplicate(parent, new_places, n_places)) {	// Verifica nos parents (coverability tree) se há algum nó igualzinho
+				node_t* child = new_node(new_places, n_places, level+1, 0, 1, parent);	// novo nó com o new places
+				insert_children_node(parent, child);	// insere o child no parent/nó atual
+				print_state(new_places, n_places, level+1);	/* Imprime no próximo nivel mas não chama DFS 
+				porque como é duplicado não se quer gerar um ciclo infinito */
+			} else {	// Se não for duplicado...
+				check_dominated(parent, new_places, n_places);	/* Verifica se algum nó acima é dominado por este novo
+				e se for, insere os w (-2) respetivamente no new_places */
 				node_t* child = new_node(new_places, n_places, level+1, 0, 0, parent);	
 				insert_children_node(parent, child);
-				//print_cur_state(child, n_places);
-				print_state(new_places, n_places, level+1);
-				dfs(child, transitions, n_places, n_transitions, level+1);
-				trans_defined = 1;
+
+				print_state(new_places, n_places, level+1);	
+				dfs(child, transitions, n_places, n_transitions, level+1);	// Chama o dfs para o novo filho	
+				trans_defined = 1;	// n e necessario
 			}
 		}
 	}
 
+	// NAO é necessario porque ele vai dar return de qualquer das maneiras no DFS
 	if (!trans_defined) {	// mark place as terminal, nenhuma transition possivel
 		set_node_terminal(parent);
 		return;
@@ -293,13 +282,11 @@ int main() {
 	int* places = (int*) malloc (sizeof(int) * n_places);
 	trans_t** transitions;
 
+	// root node pode mudar, de acordo com o input... e consoante o root_node a arvore vai ser diferente
 	node_t* root_node = input(n_places, n_transitions, transitions, places);
-
-	//print_transitions(transitions, n_places, n_transitions);
+	
 	print_state(places, n_places, 0);
 	dfs(root_node, transitions, n_places, n_transitions, 0);
-	//print_tree(root_node, n_places);
-
 
 	return 0;
 }
